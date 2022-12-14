@@ -1,77 +1,56 @@
-import React,{useState} from 'react';
-import {View,Text,StyleSheet ,TextInput, Button} from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
-
-const HomeScreen= ()=> {
-  const[correctNumber,setCorrectNumber] = useState(Math.floor(Math.random()*100)+1);
-  const[guess,setGuess]=useState('');
-  const[numGuesses, setNumGuesses]= useState(0);
-  const[result,setResult]= useState('');
-  const[guesses,setGuesses]= useState([]);
-  const[bestScore, setBestScore]= useState(0);
+import React,{useState} from "react";
+import { Text, StyleSheet, View, Button,TextInput, TouchableOpacity } from "react-native";
 
 
-  const resetGame = () => {
-    setCorrectNumber(Math.floor(Math.random()*100)+1);
-    setGuess('');
-    setNumGuesses(0);
-    setResult('');
-    setGuesses([]);
-    setBestScore(0);
+ 
+const HomeScreen = ({navigation}) => {
+  const [playerName, setPlayerName] = useState('');
 
-  }
+    return (
+    <View  style={styles.container}> 
+    <Text style = { styles.text1 }> Mobil Uygulamama Hoşgeldiniz! </Text>
+    <TextInput
+        style={styles.text3}
+        placeholder="Lütfen adınızı giriniz"
+        value={playerName}
+        onChangeText={(text) => setPlayerName(text)}
+      />
+      <Text 
+        style={styles.text1}>Merhaba {playerName}!</Text>
+    <Button 
+        onPress={() => navigation.navigate('Guess')}
+        title="Sayı Tahmin Oyunu"
+        color='#828972'
+        
+    />
+    <Button 
+        onPress={() => navigation.navigate('HowTo')}
+        title="Talimatlar"
+        color='#728979'
+        
+    />
+    <Button 
+        onPress={() => navigation.navigate('Settings')}
+        title="Ayarlar"
+        color='#897282'
+        
+    />
   
+    </View>
+    );
 
-  const onChangeText= (text) => setGuess(text);
-
-  const onSubmit= () => {
-    if (numGuesses >= 10){
-      setResult('Oyun Bitti! Doğru sayı:  '+ correctNumber);
-      return;
-  }
-
-  if(guess==correctNumber){
-    if (numGuesses + 1 < bestScore || bestScore === 0) {
-      setBestScore(numGuesses + 1);
-    }
-      setResult('Tebrikler,doğru tahmin ettiniz!'+(numGuesses+1) +'. defada sayıyı bildiniz!'  );
-      return;
-  }
-  if(guess>correctNumber){
-      setResult('Daha Küçük '+correctNumber);
-  }else{
-      setResult('Daha Büyük '+correctNumber);
-  }
-  setNumGuesses(numGuesses+1);
-  setGuesses([...guesses,guess]);
+global.playerName = this.state.playerName;
 };
-        return(
-          <View style={{flex: 1,alignItems: 'center',justifyContent: 'flex-start', backgroundColor:'#D1D9D7'}}>
-            <Text style={{color:'#1561ad', fontSize: 20, fontWeight: 'bold', marginTop:25}}>Sayı Tahmin Oyununa </Text>
-            <Text style={{color:'#1561ad', fontSize: 20, fontWeight: 'bold'}}>Hoşgeldiniz! </Text>
-            <Text style={{  fontSize: 15, fontWeight: '100', marginLeft:15, marginRight: 15 }}>
-              En fazla 10 tahminde 1 ile 100 arasında bir sayıyı tahmin etmeye çalışın.  </Text>
-            <Text style={{ fontSize: 20, fontWeight: 'bold' }} >Best score: {bestScore}</Text>
-            <Text style={{color:'#1561ad', fontSize: 20, fontWeight: 'bold' }}>Sayıyı Tahmin Edin</Text>
-            <TextInput 
-            style={{ fontSize: 20, fontWeight: 'bold' }}
-            placeholder="Tahmininizi Girin: "
-            onChangeText={onChangeText}
-            value={guess}
-            />
-            <Button title= "Tahmin Et" color="#1561ad" onPress={onSubmit}/>
-            <Text style={{color:'#1561ad', fontSize: 20, fontWeight: 'bold',marginLeft:15, marginRight: 15 }}>{result}</Text>
-            
-            <ScrollView>
-            {guesses.map((guess, index)=>(
-            <Text key={index}>Tahmin {index +1}: {guess}</Text>
-              ))}
-            </ScrollView>
-            <Button title= "Baştan Başla" color="#728979" onPress={resetGame} />
-            <Text> </Text><Text> </Text>
-          </View>
+const styles = StyleSheet.create({
+  container: {
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'flex-start',
+      backgroundColor:'#D1D9D7'
+  },
+  text1:{color:'#1561ad', fontSize: 20, fontWeight: 'bold', marginTop:25,textAlign:'center'},
+  text2:{  fontSize: 15, fontWeight: '100', marginLeft:15, marginRight: 15,textAlign:'center' },
+  text3:{ fontSize: 20, fontWeight: 'bold',textAlign:'center' }
+});
 
-        );
-    };
-    
 export default HomeScreen;
