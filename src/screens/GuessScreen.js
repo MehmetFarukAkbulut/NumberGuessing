@@ -59,7 +59,11 @@ const GuessScreen= ()=> {
 const handlePress = () => {
     Linking.openURL('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
 }
-  
+
+const deadPress = () => {
+    Linking.openURL('https://www.youtube.com/watch?v=j9V78UbdzWI&t=6s');
+}
+
         return(
           <View style={styles.container}>
             <ScrollView>
@@ -75,12 +79,13 @@ const handlePress = () => {
             value={guess}
             />
             <Button title= "Tahmin Et" color="#1561ad" onPress={onSubmit}/>
-            <Text style={{color:'#1561ad', fontSize: 20, fontWeight: 'bold',marginLeft:15, marginRight: 15 }}>{result}</Text>
+            <Text style={{color:'#1561ad', fontSize: 20, fontWeight: 'bold',marginLeft:15, marginRight: 15,textAlign:'center' }}>{result}</Text>
 
             {bestScore === 1 && <Button title= "Tek Tahmin Ödülü" color="#ffc0cb" onPress={handlePress} />}
-            <ScrollView>
+            {numGuesses >= 10 && <Button title= "Geçmiş Olsun" color="#000" onPress={deadPress} />}
+            <ScrollView >
             {guesses.map((guess, index)=>(
-            <Text key={index}>Tahmin {index +1}: {guess}</Text>
+            <Text style={styles.text2} key={index}>Tahmin {index +1}: {guess}</Text>
               ))}
             </ScrollView>
             <Button title= "Baştan Başla" color="#728979" onPress={resetGame} />

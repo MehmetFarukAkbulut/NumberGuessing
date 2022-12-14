@@ -25,13 +25,13 @@ const HomeScreen = ({navigation}) => {
     />
     <Button 
         onPress={() => navigation.navigate('HowTo')}
-        title="Talimatlar"
+        title="Nasıl Oynanır"
         color='#728979'
         
     />
     <Button 
-        onPress={() => navigation.navigate('Settings')}
-        title="Ayarlar"
+        onPress={() => navigation.navigate('WhoAmI')}
+        title="Hakkımda"
         color='#897282'
         
     />
@@ -39,7 +39,6 @@ const HomeScreen = ({navigation}) => {
     </View>
     );
 
-global.playerName = this.state.playerName;
 };
 const styles = StyleSheet.create({
   container: {
