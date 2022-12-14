@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import { Text, StyleSheet,ScrollView, View,Linking, Button,TouchableOpacity } from "react-native";
 
 const WhoAmIScreen = () => {
-        const LONG_TEXT="Benim adım Mehmet Faruk Akbulut. Trakya Üniversitesinde, Bilgisayar Mühendisliği bölümü öğrencisiyim. Bu Sayı Tahmin Oyunu benim Mobil uygulama dersi final ödevim. Umarım keyif almışsınızdır.Uygulamanın kodlarını aşağıdaki Github hesabımdan bulabilirsiniz. Bana aşağıdaki hesaplarımdan ulaşabilirsiniz. Geri dönüşlerinizi veya sorularınızı bekliyorum..."
+        const LONG_TEXT="Benim adım Mehmet Faruk Akbulut. Trakya Üniversitesinde, Bilgisayar Mühendisliği bölümü öğrencisiyim. Bu Sayı Tahmin Oyunu benim Mobil uygulama dersi final ödevim. Umarım keyif almışsınızdır.Uygulamanın kodlarını aşağıdaki Github hesabımdan bulabilirsiniz. Bana aşağıdaki hesaplarımdan ulaşabilirsiniz. Geri dönüşlerinizi bekliyorum..."
         const [text, setText] = React.useState("");  
         React.useEffect(() => {
              const timer = setInterval(() => {
@@ -11,7 +11,7 @@ const WhoAmIScreen = () => {
               return;
             }
             setText(text + LONG_TEXT[text.length]);
-          }, 125);
+          }, 10);
           return () => clearInterval(timer);
         }, [text]);
         
@@ -26,46 +26,50 @@ const WhoAmIScreen = () => {
     const  mail=()=> { Linking.openURL('https://mail.google.com/mail/u/0/#inbox?compose=CllgCHrfTZhHJCKJxMsWwtqVBBCSJbZzJxznMRJcWqsDlZmGJjcPzPlLpRdNdfStHJvPGRPmntg')};
     
     return (
-<ScrollView>
+        
         <View style={styles.container}>
-            <Text style={styles.text6}>{text}</Text>
-        <View style={styles.buttonView1}>
+        <ScrollView>
+        <Text style={styles.text6}>{text}</Text>
+        </ScrollView>
         <TouchableOpacity onPress={instagram} style={{ 
         backgroundColor: '#F77737',
-        alignItems: 'center',
+        alignSelf: 'stretch',
+        justifyContent: 'flex-end',
         borderRadius: 15,
         paddingVertical: 10,
         paddingHorizontal: 15 }}
-         ><Text style={{ color: '#fff' }}>INSTAGRAM</Text>
+         ><Text style={{ textAlign:'center',color: '#fff' }}>INSTAGRAM</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={linkedin} style={{ 
         backgroundColor: '#0072b1',
-        alignItems: 'center',
+        alignSelf: 'stretch',
+        justifyContent: 'flex-end',
         borderRadius: 15,
         paddingVertical: 10,
         paddingHorizontal: 15 }}
-         ><Text style={{ color: '#fff' }}>LINKEDIN</Text>
+         ><Text style={{ textAlign:'center',color: '#fff' }}>LINKEDIN</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={github} style={{ 
         backgroundColor: '#171515',
-        alignItems: 'center',
+        alignSelf: 'stretch',
+        justifyContent: 'flex-end',
         borderRadius: 15,
         paddingVertical: 10,
         paddingHorizontal: 15 }}
-         ><Text style={{ color: '#fff' }}>GITHUB</Text>
+         ><Text style={{ textAlign:'center',color: '#fff' }}>GITHUB</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={mail} style={{ 
         backgroundColor: '#4285F4',
-        alignItems: 'center',
+        alignSelf: 'stretch',
+        justifyContent: 'flex-end',
         borderRadius: 15,
         paddingVertical: 10,
         paddingHorizontal: 15 }}
-         ><Text style={{ color: '#fff' }}>MAIL</Text>
+         ><Text style={{ textAlign:'center',color: '#fff' }}>MAIL</Text>
         </TouchableOpacity>
         </View>
-        
-        </View>
-        </ScrollView>
+
+       
     );
 };
 
