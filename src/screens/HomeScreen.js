@@ -12,7 +12,7 @@ const HomeScreen = ({navigation}) => {
    
         <View style={styles.buttonView1}>
         <TouchableOpacity onPress={() => navigation.navigate('Guess')} style={{ 
-        backgroundColor: '#ff4618',
+        backgroundColor: '#828972',
         alignItems: 'center',
         borderRadius: 15,
         paddingVertical: 10,
@@ -20,7 +20,7 @@ const HomeScreen = ({navigation}) => {
          ><Text style={{ color: '#fff' }}>OYUNA BAŞLA</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate('HowTo')} style={{ 
-        backgroundColor: '#a9d6d1',
+        backgroundColor: '#728979',
         alignItems: 'center',
         borderRadius: 15,
         paddingVertical: 10,
@@ -28,7 +28,7 @@ const HomeScreen = ({navigation}) => {
          ><Text style={{ color: '#fff' }}>NASIL OYNANIR</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate('WhoAmI')} style={{ 
-        backgroundColor: '#32a8a8',
+        backgroundColor: '#897282',
         alignItems: 'center',
         borderRadius: 15,
         paddingVertical: 10,
@@ -67,11 +67,11 @@ const styles = StyleSheet.create({
       flex: 1,
       alignItems: 'center',
       justifyContent: 'flex-start',
-      backgroundColor:'#fff0f5'
+      backgroundColor:'#D1D9D7'
   },
-  text1:{color:'#07064a', fontSize: 25, fontWeight: 'bold', marginTop:25,textAlign:'center'},
+  text1:{color:'#1561ad', fontSize: 25, fontWeight: 'bold', marginTop:25,textAlign:'center'},
   text2:{  fontSize: 15, fontWeight: '100', marginLeft:15, marginRight: 15,textAlign:'center' },
-  text3:{color:'#07064a', fontSize: 20, fontWeight: 'bold',textAlign:'center' }
+  text3:{ fontSize: 20, fontWeight: 'bold',textAlign:'center' }
 });
 
 export default HomeScreen;
