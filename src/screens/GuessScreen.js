@@ -56,7 +56,7 @@ const GuessScreen= ()=> {
   setNumGuesses(numGuesses+1);
   setGuesses([...guesses,guess]);
 };
-const handlePress = () => {
+const luckyPress = () => {
     Linking.openURL('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
 }
 
@@ -88,11 +88,11 @@ const deadPress = () => {
             </TouchableOpacity>
             <Text style={{color:'#1561ad', fontSize: 20, fontWeight: 'bold',marginLeft:15, marginRight: 15,textAlign:'center' }}>{result}</Text>
 
-            {bestScore === 1 && <Button title= "Tek Tahmin Ödülü" color="#ffc0cb" onPress={handlePress} />}
+            {bestScore === 1 && <Button title= "Tek Tahmin Ödülü" color="#ffc0cb" onPress={luckyPress} />}
             {numGuesses >= 10 && <Button title= "Geçmiş Olsun" color="#000" onPress={deadPress} />}
             <ScrollView >
             {guesses.map((guess, index)=>(
-            <Text style={styles.text2} key={index}>Tahmin {index +1}: {guess}. {result}</Text>
+            <Text style={styles.text2} key={index}>Tahmin {index +1}: {guess}</Text>
               ))}
             </ScrollView>
             <TouchableOpacity onPress={resetGame} style={{ 

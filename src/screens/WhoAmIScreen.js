@@ -23,8 +23,6 @@ const WhoAmIScreen = () => {
     const instagram=()=> {Linking.openURL('https://www.instagram.com/mfaruk_akbulut/')};
     const  linkedin=()=> { Linking.openURL('https://www.linkedin.com/in/mehmet-faruk-akbulut-692340236/')};
     const  github=()=> { Linking.openURL('https://github.com/MehmetFarukAkbulut')};
-    const  mail=()=> { Linking.openURL('https://mail.google.com/mail/u/0/#inbox?compose=CllgCHrfTZhHJCKJxMsWwtqVBBCSJbZzJxznMRJcWqsDlZmGJjcPzPlLpRdNdfStHJvPGRPmntg')};
-    
     return (
         
         <View style={styles.container}>
@@ -57,15 +55,6 @@ const WhoAmIScreen = () => {
         paddingVertical: 10,
         paddingHorizontal: 15 }}
          ><Text style={{ textAlign:'center',color: '#fff' }}>GITHUB</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={mail} style={{ 
-        backgroundColor: '#4285F4',
-        alignSelf: 'stretch',
-        justifyContent: 'flex-end',
-        borderRadius: 15,
-        paddingVertical: 10,
-        paddingHorizontal: 15 }}
-         ><Text style={{ textAlign:'center',color: '#fff' }}>MAIL</Text>
         </TouchableOpacity>
         </View>
 
