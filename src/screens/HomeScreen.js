@@ -15,8 +15,8 @@ const HomeScreen = ({navigation}) => {
         value={playerName}
         onChangeText={(text) => setPlayerName(text)}
       />
-      <Text 
-        style={styles.text1}>Merhaba {playerName}!</Text>
+      <Text style={styles.text3}>Merhaba {playerName}!</Text>
+        <View style={styles.buttonView1}>
     <Button 
         onPress={() => navigation.navigate('Guess')}
         title="Sayı Tahmin Oyunu"
@@ -35,19 +35,21 @@ const HomeScreen = ({navigation}) => {
         color='#897282'
         
     />
-  
+  </View>
     </View>
     );
 
 };
 const styles = StyleSheet.create({
+  
+  buttonView1: { flex: 1, alignSelf: 'stretch', marginLeft:10,marginRight:10},
   container: {
       flex: 1,
       alignItems: 'center',
       justifyContent: 'flex-start',
       backgroundColor:'#D1D9D7'
   },
-  text1:{color:'#1561ad', fontSize: 20, fontWeight: 'bold', marginTop:25,textAlign:'center'},
+  text1:{color:'#1561ad', fontSize: 25, fontWeight: 'bold', marginTop:25,textAlign:'center'},
   text2:{  fontSize: 15, fontWeight: '100', marginLeft:15, marginRight: 15,textAlign:'center' },
   text3:{ fontSize: 20, fontWeight: 'bold',textAlign:'center' }
 });

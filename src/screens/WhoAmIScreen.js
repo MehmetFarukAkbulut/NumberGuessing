@@ -29,7 +29,7 @@ const WhoAmIScreen = () => {
 <ScrollView>
         <View style={styles.container}>
             <Text style={styles.text6}>{text}</Text>
-        <View style={{ flex: 1, alignSelf: 'stretch', justifyContent: 'flex-end',marginLeft:10,marginRight:10}}>
+        <View style={styles.buttonView1}>
         <Button  title= "Instagram" color="#F77737" onPress={instagram}  />
         <Button  title= "Linkedin" color="#0072b1" onPress={linkedin} />
         <Button  title= "Github" color="#171515" onPress={github} />
@@ -42,6 +42,7 @@ const WhoAmIScreen = () => {
 };
 
 const styles = StyleSheet.create({
+    buttonView1: { flex: 1, alignSelf: 'stretch', justifyContent: 'flex-end',marginLeft:10,marginRight:10},
     container: {
         flex: 1,
         alignItems: 'center',
