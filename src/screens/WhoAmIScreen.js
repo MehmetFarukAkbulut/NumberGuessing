@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { Text, StyleSheet,ScrollView, View,Linking, Button } from "react-native";
+import { Text, StyleSheet,ScrollView, View,Linking, Button,TouchableOpacity } from "react-native";
 
 const WhoAmIScreen = () => {
         const LONG_TEXT="Benim adım Mehmet Faruk Akbulut. Trakya Üniversitesinde, Bilgisayar Mühendisliği bölümü öğrencisiyim. Bu Sayı Tahmin Oyunu benim Mobil uygulama dersi final ödevim. Umarım keyif almışsınızdır.Uygulamanın kodlarını aşağıdaki Github hesabımdan bulabilirsiniz. Bana aşağıdaki hesaplarımdan ulaşabilirsiniz. Geri dönüşlerinizi veya sorularınızı bekliyorum..."
@@ -30,10 +30,38 @@ const WhoAmIScreen = () => {
         <View style={styles.container}>
             <Text style={styles.text6}>{text}</Text>
         <View style={styles.buttonView1}>
-        <Button  title= "Instagram" color="#F77737" onPress={instagram}  />
-        <Button  title= "Linkedin" color="#0072b1" onPress={linkedin} />
-        <Button  title= "Github" color="#171515" onPress={github} />
-        <Button  title= "Mail" color="#4285F4" onPress={mail} />
+        <TouchableOpacity onPress={instagram} style={{ 
+        backgroundColor: '#F77737',
+        alignItems: 'center',
+        borderRadius: 15,
+        paddingVertical: 10,
+        paddingHorizontal: 15 }}
+         ><Text style={{ color: '#fff' }}>INSTAGRAM</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={linkedin} style={{ 
+        backgroundColor: '#0072b1',
+        alignItems: 'center',
+        borderRadius: 15,
+        paddingVertical: 10,
+        paddingHorizontal: 15 }}
+         ><Text style={{ color: '#fff' }}>LINKEDIN</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={github} style={{ 
+        backgroundColor: '#171515',
+        alignItems: 'center',
+        borderRadius: 15,
+        paddingVertical: 10,
+        paddingHorizontal: 15 }}
+         ><Text style={{ color: '#fff' }}>GITHUB</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={mail} style={{ 
+        backgroundColor: '#4285F4',
+        alignItems: 'center',
+        borderRadius: 15,
+        paddingVertical: 10,
+        paddingHorizontal: 15 }}
+         ><Text style={{ color: '#fff' }}>MAIL</Text>
+        </TouchableOpacity>
         </View>
         
         </View>
@@ -42,6 +70,7 @@ const WhoAmIScreen = () => {
 };
 
 const styles = StyleSheet.create({
+
     buttonView1: { flex: 1, alignSelf: 'stretch', justifyContent: 'flex-end',marginLeft:10,marginRight:10},
     container: {
         flex: 1,

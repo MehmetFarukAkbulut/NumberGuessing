@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import {View,Text,StyleSheet ,TextInput, Button,Linking} from 'react-native';
+import {View,Text,StyleSheet ,TextInput, Button,TouchableOpacity,Linking} from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 
 const GuessScreen= ()=> {
@@ -73,34 +73,53 @@ const deadPress = () => {
             <Text style={styles.text3} >Best score: {bestScore}</Text>
             <Text style={styles.text5}>Sayıyı Tahmin Edin</Text>
             <TextInput 
-            style={styles.text4}
+            style={styles.input}
             placeholder="Tahmininizi Girin: "
             onChangeText={onChangeText}
             value={guess}
             />
-            <Button title= "Tahmin Et" color="#1561ad" onPress={onSubmit}/>
+            <TouchableOpacity onPress={onSubmit} style={{ 
+            backgroundColor: '#1561ad',
+            alignItems: 'center',
+            borderRadius: 15,
+            paddingVertical: 10,
+            paddingHorizontal: 15 }}
+             ><Text style={{ color: '#fff' }}>TAHMİN ET</Text>
+            </TouchableOpacity>
             <Text style={{color:'#1561ad', fontSize: 20, fontWeight: 'bold',marginLeft:15, marginRight: 15,textAlign:'center' }}>{result}</Text>
 
             {bestScore === 1 && <Button title= "Tek Tahmin Ödülü" color="#ffc0cb" onPress={handlePress} />}
             {numGuesses >= 10 && <Button title= "Geçmiş Olsun" color="#000" onPress={deadPress} />}
             <ScrollView >
             {guesses.map((guess, index)=>(
-            <Text style={styles.text2} key={index}>Tahmin {index +1}: {guess}</Text>
+            <Text style={styles.text2} key={index}>Tahmin {index +1}: {guess}. {result}</Text>
               ))}
             </ScrollView>
-            <Button title= "Baştan Başla" color="#728979" onPress={resetGame} />
+            <TouchableOpacity onPress={resetGame} style={{ 
+            backgroundColor: '#728979',
+            alignItems: 'center',
+            borderRadius: 15,
+            paddingVertical: 10,
+            paddingHorizontal: 15 }}
+             ><Text style={{ color: '#fff' }}>BAŞTAN BAŞLA</Text>
+            </TouchableOpacity>
             <TextInput
-            style={styles.text4}
+            style={styles.input}
             placeholder="Player Name"
             value={playerName}
             onChangeText={onChangePlayerName}
             />
-            <Button
-            title="Skorunu Kaydet"
-            onPress={submitRecord}
-            />
+            <TouchableOpacity onPress={submitRecord} style={{ 
+            backgroundColor: '#897282',
+            alignItems: 'center',
+            borderRadius: 15,
+            paddingVertical: 10,
+            paddingHorizontal: 15 }}
+             ><Text style={{ color: '#fff' }}>SKORUNU KAYDET</Text>
+            </TouchableOpacity>
+
             {records.map((record, index) => (record.bestScore>0 &&
-            <Text key={index}>Player {record.playerName}: {record.bestScore} defada bildi</Text>
+            <Text style={styles.text2} key={index}>Player {record.playerName}: {record.bestScore} defada bildi</Text>
             ))}
             </ScrollView>
          </View>
@@ -109,6 +128,18 @@ const deadPress = () => {
         );
     };
     const styles = StyleSheet.create({
+        input: {
+            width: 300,
+            height: 40,
+            textAlign:'center',
+            backgroundColor: '#fff',
+            paddingVertical: 10,
+            paddingHorizontal: 15,
+            borderColor: '#ccc',
+            borderWidth: 1,
+            borderRadius: 15, 
+            fontSize: 16,
+    },
         container: {
             flex: 1,
             alignItems: 'center',

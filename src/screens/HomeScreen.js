@@ -9,38 +9,58 @@ const HomeScreen = ({navigation}) => {
     return (
     <View  style={styles.container}> 
     <Text style = { styles.text1 }> Mobil Uygulamama Hoşgeldiniz! </Text>
-    <TextInput
-        style={styles.text3}
+   
+        <View style={styles.buttonView1}>
+        <TouchableOpacity onPress={() => navigation.navigate('Guess')} style={{ 
+        backgroundColor: '#828972',
+        alignItems: 'center',
+        borderRadius: 15,
+        paddingVertical: 10,
+        paddingHorizontal: 15 }}
+         ><Text style={{ color: '#fff' }}>OYUNA BAŞLA</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('HowTo')} style={{ 
+        backgroundColor: '#728979',
+        alignItems: 'center',
+        borderRadius: 15,
+        paddingVertical: 10,
+        paddingHorizontal: 15 }}
+         ><Text style={{ color: '#fff' }}>NASIL OYNANIR</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('WhoAmI')} style={{ 
+        backgroundColor: '#897282',
+        alignItems: 'center',
+        borderRadius: 15,
+        paddingVertical: 10,
+        paddingHorizontal: 15 }}
+         ><Text style={{ color: '#fff' }}>HAKKIMDA</Text>
+        </TouchableOpacity>
+        <TextInput
+        style={styles.input}
         placeholder="Lütfen adınızı giriniz"
         value={playerName}
         onChangeText={(text) => setPlayerName(text)}
       />
       <Text style={styles.text3}>Merhaba {playerName}!</Text>
-        <View style={styles.buttonView1}>
-    <Button 
-        onPress={() => navigation.navigate('Guess')}
-        title="Sayı Tahmin Oyunu"
-        color='#828972'
-        
-    />
-    <Button 
-        onPress={() => navigation.navigate('HowTo')}
-        title="Nasıl Oynanır"
-        color='#728979'
-        
-    />
-    <Button 
-        onPress={() => navigation.navigate('WhoAmI')}
-        title="Hakkımda"
-        color='#897282'
-        
-    />
-  </View>
+     </View>
+  
     </View>
     );
 
 };
 const styles = StyleSheet.create({
+  input: {
+  width: 300,
+  height: 40,
+  backgroundColor: '#fff',
+  paddingVertical: 10,
+  paddingHorizontal: 15,
+  borderColor: '#ccc',
+  borderWidth: 1,
+  borderRadius: 15, 
+  fontSize: 16,
+  textAlign:'center'
+},
   
   buttonView1: { flex: 1, alignSelf: 'stretch', marginLeft:10,marginRight:10},
   container: {
