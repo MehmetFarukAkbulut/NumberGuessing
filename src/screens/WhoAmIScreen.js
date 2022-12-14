@@ -28,14 +28,12 @@ const WhoAmIScreen = () => {
     return (
 
         <View style={styles.container}>
-            <ScrollView>
-            <Text style={styles.text6}>{text}</Text>
-        
-        <Button title= "Instagram" color="#F77737" onPress={instagram} alignItems="flex-end" />
+        <ScrollView>
+        <Text style={styles.text6}>{text}</Text>
+        <Button title= "Instagram" color="#F77737" onPress={instagram}  />
         <Button title= "Linkedin" color="#0072b1" onPress={linkedin} />
         <Button title= "Github" color="#171515" onPress={github} />
         <Button title= "Mail" color="#4285F4" onPress={mail} />
-        
         </ScrollView>
         </View>
     );
