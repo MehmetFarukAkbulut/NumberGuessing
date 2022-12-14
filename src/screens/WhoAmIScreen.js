@@ -26,16 +26,18 @@ const WhoAmIScreen = () => {
     const  mail=()=> { Linking.openURL('https://mail.google.com/mail/u/0/#inbox?compose=CllgCHrfTZhHJCKJxMsWwtqVBBCSJbZzJxznMRJcWqsDlZmGJjcPzPlLpRdNdfStHJvPGRPmntg')};
     
     return (
-
+<ScrollView>
         <View style={styles.container}>
-        <ScrollView>
-        <Text style={styles.text6}>{text}</Text>
-        <Button title= "Instagram" color="#F77737" onPress={instagram}  />
-        <Button title= "Linkedin" color="#0072b1" onPress={linkedin} />
-        <Button title= "Github" color="#171515" onPress={github} />
-        <Button title= "Mail" color="#4285F4" onPress={mail} />
-        </ScrollView>
+            <Text style={styles.text6}>{text}</Text>
+        <View style={{ flex: 1, alignSelf: 'stretch', justifyContent: 'flex-end',marginLeft:10,marginRight:10}}>
+        <Button  title= "Instagram" color="#F77737" onPress={instagram}  />
+        <Button  title= "Linkedin" color="#0072b1" onPress={linkedin} />
+        <Button  title= "Github" color="#171515" onPress={github} />
+        <Button  title= "Mail" color="#4285F4" onPress={mail} />
         </View>
+        
+        </View>
+        </ScrollView>
     );
 };
 
@@ -51,7 +53,7 @@ const styles = StyleSheet.create({
     text3:{ fontSize: 20, fontWeight: 'bold',textAlign:'center' },
     text4:{ fontSize: 20, fontWeight: 'bold',textAlign:'center', marginTop:25 },
     text5:{ color:'#1561ad',fontSize: 20, fontWeight: 'bold',textAlign:'center', marginTop:5 },
-    text6:{ color:'#000',fontSize: 15, fontWeight: '200',textAlign:'center',  marginTop:15,marginLeft:15 }
+    text6:{ color:'#000',fontSize: 20, fontWeight: '200',textAlign:'center',  marginTop:15,marginLeft:15 }
 });
 
 
