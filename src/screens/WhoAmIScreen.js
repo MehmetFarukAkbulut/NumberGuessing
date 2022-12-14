@@ -29,31 +29,13 @@ const WhoAmIScreen = () => {
         <ScrollView>
         <Text style={styles.text6}>{text}</Text>
         </ScrollView>
-        <TouchableOpacity onPress={instagram} style={{ 
-        backgroundColor: '#F77737',
-        alignSelf: 'stretch',
-        justifyContent: 'flex-end',
-        borderRadius: 15,
-        paddingVertical: 10,
-        paddingHorizontal: 15 }}
+        <TouchableOpacity onPress={instagram} style={[styles.buttonstyle,{ backgroundColor: '#F77737'}]}
          ><Text style={{ textAlign:'center',color: '#fff' }}>INSTAGRAM</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={linkedin} style={{ 
-        backgroundColor: '#0072b1',
-        alignSelf: 'stretch',
-        justifyContent: 'flex-end',
-        borderRadius: 15,
-        paddingVertical: 10,
-        paddingHorizontal: 15 }}
+        <TouchableOpacity onPress={linkedin} style={[styles.buttonstyle,{ backgroundColor: '#0072b1'}]}
          ><Text style={{ textAlign:'center',color: '#fff' }}>LINKEDIN</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={github} style={{ 
-        backgroundColor: '#171515',
-        alignSelf: 'stretch',
-        justifyContent: 'flex-end',
-        borderRadius: 15,
-        paddingVertical: 10,
-        paddingHorizontal: 15 }}
+        <TouchableOpacity onPress={github} style={[styles.buttonstyle,{ backgroundColor: '#171515'}]}
          ><Text style={{ textAlign:'center',color: '#fff' }}>GITHUB</Text>
         </TouchableOpacity>
         </View>
@@ -71,6 +53,12 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor:'#fff0f5'
     },
+    buttonstyle: { 
+      alignItems: 'center',
+      borderRadius: 15,
+      paddingVertical: 10,
+      paddingHorizontal: 15 }
+    ,
     text1:{color:'#1561ad', fontSize: 25, fontWeight: 'bold', marginTop:25,textAlign:'center'},
     text2:{  fontSize: 15, fontWeight: '100', marginLeft:15, marginRight: 15,textAlign:'center' },
     text3:{ fontSize: 20, fontWeight: 'bold',textAlign:'center' },

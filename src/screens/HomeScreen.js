@@ -11,28 +11,13 @@ const HomeScreen = ({navigation}) => {
     <Text style = { styles.text1 }> Mobil Uygulamama Hoşgeldiniz! </Text>
    
         <View style={styles.buttonView1}>
-        <TouchableOpacity onPress={() => navigation.navigate('Guess')} style={{ 
-        backgroundColor: '#828972',
-        alignItems: 'center',
-        borderRadius: 15,
-        paddingVertical: 10,
-        paddingHorizontal: 15 }}
+        <TouchableOpacity onPress={() => navigation.navigate('Guess')} style={[styles.buttonstyle,{ backgroundColor: '#828972'}]}
          ><Text style={{ color: '#fff' }}>OYUNA BAŞLA</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate('HowTo')} style={{ 
-        backgroundColor: '#728979',
-        alignItems: 'center',
-        borderRadius: 15,
-        paddingVertical: 10,
-        paddingHorizontal: 15 }}
+        <TouchableOpacity onPress={() => navigation.navigate('HowTo')} style={[styles.buttonstyle,{ backgroundColor: '#728979'}]}
          ><Text style={{ color: '#fff' }}>NASIL OYNANIR</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate('WhoAmI')} style={{ 
-        backgroundColor: '#897282',
-        alignItems: 'center',
-        borderRadius: 15,
-        paddingVertical: 10,
-        paddingHorizontal: 15 }}
+        <TouchableOpacity onPress={() => navigation.navigate('WhoAmI')} style={[styles.buttonstyle,{ backgroundColor: '#897282'}]}
          ><Text style={{ color: '#fff' }}>HAKKIMDA</Text>
         </TouchableOpacity>
         <TextInput
@@ -61,6 +46,12 @@ const styles = StyleSheet.create({
   fontSize: 16,
   textAlign:'center'
 },
+buttonstyle: { 
+  alignItems: 'center',
+  borderRadius: 15,
+  paddingVertical: 10,
+  paddingHorizontal: 15 }
+,
   
   buttonView1: { flex: 1, alignSelf: 'stretch', marginLeft:10,marginRight:10},
   container: {

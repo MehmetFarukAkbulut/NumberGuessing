@@ -78,12 +78,7 @@ const deadPress = () => {
             onChangeText={onChangeText}
             value={guess}
             />
-            <TouchableOpacity onPress={onSubmit} style={{ 
-            backgroundColor: '#1561ad',
-            alignItems: 'center',
-            borderRadius: 15,
-            paddingVertical: 10,
-            paddingHorizontal: 15 }}
+            <TouchableOpacity onPress={onSubmit}  style={[styles.buttonstyle,{ backgroundColor: '#1561ad'}]}
              ><Text style={{ color: '#fff' }}>TAHMİN ET</Text>
             </TouchableOpacity>
             <Text style={{color:'#1561ad', fontSize: 20, fontWeight: 'bold',marginLeft:15, marginRight: 15,textAlign:'center' }}>{result}</Text>
@@ -95,12 +90,7 @@ const deadPress = () => {
             <Text style={styles.text2} key={index}>Tahmin {index +1}: {guess}</Text>
               ))}
             </ScrollView>
-            <TouchableOpacity onPress={resetGame} style={{ 
-            backgroundColor: '#728979',
-            alignItems: 'center',
-            borderRadius: 15,
-            paddingVertical: 10,
-            paddingHorizontal: 15 }}
+            <TouchableOpacity onPress={resetGame} style={[styles.buttonstyle,{ backgroundColor: '#728979'}]}
              ><Text style={{ color: '#fff' }}>BAŞTAN BAŞLA</Text>
             </TouchableOpacity>
             <TextInput
@@ -109,12 +99,7 @@ const deadPress = () => {
             value={playerName}
             onChangeText={onChangePlayerName}
             />
-            <TouchableOpacity onPress={submitRecord} style={{ 
-            backgroundColor: '#897282',
-            alignItems: 'center',
-            borderRadius: 15,
-            paddingVertical: 10,
-            paddingHorizontal: 15 }}
+            <TouchableOpacity onPress={submitRecord} style={[styles.buttonstyle,{ backgroundColor: '#897282'}]}
              ><Text style={{ color: '#fff' }}>SKORUNU KAYDET</Text>
             </TouchableOpacity>
 
@@ -140,6 +125,12 @@ const deadPress = () => {
             borderRadius: 15, 
             fontSize: 16,
     },
+        buttonstyle: { 
+          alignItems: 'center',
+          borderRadius: 15,
+          paddingVertical: 10,
+          paddingHorizontal: 15 }
+    ,
         container: {
             flex: 1,
             alignItems: 'center',
