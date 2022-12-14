@@ -29,13 +29,13 @@ const WhoAmIScreen = () => {
         <ScrollView>
         <Text style={styles.text6}>{text}</Text>
         </ScrollView>
-        <TouchableOpacity onPress={instagram} style={[styles.buttonstyle,{ backgroundColor: '#F77737'}]}
+        <TouchableOpacity onPress={instagram} style={[styles.buttonstyle,{ backgroundColor:'#F77737'}]}
          ><Text style={{ textAlign:'center',color: '#fff' }}>INSTAGRAM</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={linkedin} style={[styles.buttonstyle,{ backgroundColor: '#0072b1'}]}
+        <TouchableOpacity onPress={linkedin} style={[styles.buttonstyle,{ backgroundColor:'#0072b1'}]}
          ><Text style={{ textAlign:'center',color: '#fff' }}>LINKEDIN</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={github} style={[styles.buttonstyle,{ backgroundColor: '#171515'}]}
+        <TouchableOpacity onPress={github} style={[styles.buttonstyle,{ backgroundColor:'#171515'}]}
          ><Text style={{ textAlign:'center',color: '#fff' }}>GITHUB</Text>
         </TouchableOpacity>
         </View>
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
         backgroundColor:'#fff0f5'
     },
     buttonstyle: { 
-      alignItems: 'center',
+      alignSelf: 'stretch',
       borderRadius: 15,
       paddingVertical: 10,
       paddingHorizontal: 15 }
