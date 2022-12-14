@@ -79,7 +79,7 @@ const deadPress = () => {
             value={guess}
             />
             <TouchableOpacity onPress={onSubmit} style={{ 
-            backgroundColor: '#1561ad',
+            backgroundColor: '#6a5acd',
             alignItems: 'center',
             borderRadius: 15,
             paddingVertical: 10,
@@ -96,7 +96,7 @@ const deadPress = () => {
               ))}
             </ScrollView>
             <TouchableOpacity onPress={resetGame} style={{ 
-            backgroundColor: '#728979',
+            backgroundColor: '#4169e1',
             alignItems: 'center',
             borderRadius: 15,
             paddingVertical: 10,
@@ -110,7 +110,7 @@ const deadPress = () => {
             onChangeText={onChangePlayerName}
             />
             <TouchableOpacity onPress={submitRecord} style={{ 
-            backgroundColor: '#897282',
+            backgroundColor: '#087EB0',
             alignItems: 'center',
             borderRadius: 15,
             paddingVertical: 10,
@@ -144,13 +144,13 @@ const deadPress = () => {
             flex: 1,
             alignItems: 'center',
             justifyContent: 'flex-start',
-            backgroundColor:'#D1D9D7'
+            backgroundColor:'#fff0f5'
         },
-        text1:{color:'#1561ad', fontSize: 25, fontWeight: 'bold', marginTop:25,textAlign:'center'},
+        text1:{color:'#07064a', fontSize: 25, fontWeight: 'bold', marginTop:25,textAlign:'center'},
         text2:{  fontSize: 15, fontWeight: '100', marginLeft:15, marginRight: 15,textAlign:'center' },
         text3:{ fontSize: 20, fontWeight: 'bold',textAlign:'center' },
         text4:{ fontSize: 20, fontWeight: 'bold',textAlign:'center', marginTop:25 },
-        text5:{ color:'#1561ad',fontSize: 20, fontWeight: 'bold',textAlign:'center', marginTop:5 }
+        text5:{ color:'#07064a',fontSize: 20, fontWeight: 'bold',textAlign:'center', marginTop:5 }
     });
 
 export default GuessScreen;
