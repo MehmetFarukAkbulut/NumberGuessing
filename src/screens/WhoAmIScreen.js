@@ -8,6 +8,8 @@ import {
   Button,
   TouchableOpacity,
 } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
+
 
 const WhoAmIScreen = () => {
   const LONG_TEXT =
@@ -37,6 +39,12 @@ const WhoAmIScreen = () => {
   };
   return (
     <View style={styles.container}>
+      <LinearGradient
+      style={styles.containerLinear}
+      colors={["#85D6E9","#E99885"]}
+      start={{ x:0 , y:0 }}
+      end={{ x: 0, y:1}}
+    >
       <ScrollView>
         <Text style={styles.text6}>{text}</Text>
       </ScrollView>
@@ -58,6 +66,8 @@ const WhoAmIScreen = () => {
       >
         <Text style={{ textAlign: "center", color: "#fff" }}>GITHUB</Text>
       </TouchableOpacity>
+      
+      </LinearGradient>
     </View>
   );
 };
@@ -72,9 +82,15 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    alignItems: "center",
+    alignContent: "center",
     justifyContent: "center",
     backgroundColor: "#fff0f5",
+  },
+  containerLinear: {
+    flex: 1,
+    backgroundColor: "#4530b3",
+    alignContent: "center",
+    justifyContent: "center",
   },
   buttonstyle: {
     alignSelf: "stretch",

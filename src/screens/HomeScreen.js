@@ -7,42 +7,50 @@ import {
   TextInput,
   TouchableOpacity,
 } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 
 const HomeScreen = ({ navigation }) => {
   const [playerName, setPlayerName] = useState("");
 
-  return (
-    <View style={styles.container}>
-      <Text style={styles.text1}> Mobil Uygulamama Hoşgeldiniz! </Text>
+  return (<View style={styles.container}>
+    <LinearGradient
+      style={styles.containerLinear}
+      colors={["#85D6E9","#E99885"]}
+      start={{ x:0 , y:0 }}
+      end={{ x: 0, y:1}}
+    >
+      
+        <Text style={styles.text1}> Mobil Uygulamama Hoşgeldiniz! </Text>
 
-      <View style={styles.buttonView1}>
-        <TouchableOpacity
-          onPress={() => navigation.navigate("Guess")}
-          style={[styles.buttonstyle, { backgroundColor: "#828972" }]}
-        >
-          <Text style={{ color: "#fff" }}>OYUNA BAŞLA</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => navigation.navigate("HowTo")}
-          style={[styles.buttonstyle, { backgroundColor: "#728979" }]}
-        >
-          <Text style={{ color: "#fff" }}>NASIL OYNANIR</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => navigation.navigate("WhoAmI")}
-          style={[styles.buttonstyle, { backgroundColor: "#897282" }]}
-        >
-          <Text style={{ color: "#fff" }}>HAKKIMDA</Text>
-        </TouchableOpacity>
-        <TextInput
-          style={styles.input}
-          placeholder="Lütfen adınızı giriniz"
-          value={playerName}
-          onChangeText={(text) => setPlayerName(text)}
-        />
-        <Text style={styles.text3}>Merhaba {playerName}!</Text>
-      </View>
-    </View>
+        <View style={styles.buttonView1}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Guess")}
+            style={[styles.buttonstyle, { backgroundColor: "#C7D9FF" }]}
+          >
+            <Text style={{ color: "#fff" }}>OYUNA BAŞLA</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("HowTo")}
+            style={[styles.buttonstyle, { backgroundColor: "#F0B2C9" }]}
+          >
+            <Text style={{ color: "#fff" }}>NASIL OYNANIR</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("WhoAmI")}
+            style={[styles.buttonstyle, { backgroundColor: "#796DCD" }]}
+          >
+            <Text style={{ color: "#fff" }}>HAKKIMDA</Text>
+          </TouchableOpacity>
+          {/* <TextInput
+            style={styles.input}
+            placeholder="Lütfen adınızı giriniz"
+            value={playerName}
+            onChangeText={(text) => setPlayerName(text)}
+          />
+          <Text style={styles.text3}>Merhaba {playerName}!</Text> */}
+        </View>
+      
+    </LinearGradient></View>
   );
 };
 const styles = StyleSheet.create({
@@ -72,12 +80,18 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    alignItems: "center",
+    alignItems: "stretch",
     justifyContent: "flex-start",
-    backgroundColor: "#D1D9D7",
+    // backgroundColor: "#D1D9D7",
+  },
+  containerLinear: {
+    flex: 1,
+    backgroundColor: "#4530b3",
+    alignContent: "center",
+    justifyContent: "center",
   },
   text1: {
-    color: "#1561ad",
+    color: "#5C5E5E",
     fontSize: 25,
     fontWeight: "bold",
     marginTop: 25,

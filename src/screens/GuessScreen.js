@@ -9,6 +9,8 @@ import {
   Linking,
 } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
+import { LinearGradient } from "expo-linear-gradient";
+
 
 const GuessScreen = () => {
   const [correctNumber, setCorrectNumber] = useState(
@@ -76,6 +78,12 @@ const GuessScreen = () => {
 
   return (
     <View style={styles.container}>
+      <LinearGradient
+      style={styles.containerLinear}
+      colors={["#85D6E9","#E99885"]}
+      start={{ x:0 , y:0 }}
+      end={{ x: 0, y:1}}
+    >
       <ScrollView>
         <Text style={styles.text1}>Sayı Tahmin Oyununa Hoşgeldiniz!</Text>
         <Text style={styles.text2}>
@@ -92,7 +100,7 @@ const GuessScreen = () => {
         />
         <TouchableOpacity
           onPress={onSubmit}
-          style={[styles.buttonstyle, { backgroundColor: "#1561ad" }]}
+          style={[styles.buttonstyle, { backgroundColor: "#796DCD" }]}
         >
           <Text style={{ color: "#fff" }}>TAHMİN ET</Text>
         </TouchableOpacity>
@@ -128,7 +136,7 @@ const GuessScreen = () => {
         </ScrollView>
         <TouchableOpacity
           onPress={resetGame}
-          style={[styles.buttonstyle, { backgroundColor: "#728979" }]}
+          style={[styles.buttonstyle, { backgroundColor: "#F0B2C9" }]}
         >
           <Text style={{ color: "#fff" }}>BAŞTAN BAŞLA</Text>
         </TouchableOpacity>
@@ -140,7 +148,7 @@ const GuessScreen = () => {
         />
         <TouchableOpacity
           onPress={submitRecord}
-          style={[styles.buttonstyle, { backgroundColor: "#897282" }]}
+          style={[styles.buttonstyle, { backgroundColor: "#C7D9FF" }]}
         >
           <Text style={{ color: "#fff" }}>SKORUNU KAYDET</Text>
         </TouchableOpacity>
@@ -154,6 +162,7 @@ const GuessScreen = () => {
             )
         )}
       </ScrollView>
+      </LinearGradient>
     </View>
   );
 };
@@ -169,21 +178,31 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 15,
     fontSize: 16,
+    marginLeft: 10,
+    marginRight: 15,
   },
   buttonstyle: {
     alignItems: "center",
     borderRadius: 15,
     paddingVertical: 10,
     paddingHorizontal: 15,
+    marginLeft: 10,
+    marginRight: 10,
   },
   container: {
     flex: 1,
-    alignItems: "center",
+    alignContent: "stretch",
     justifyContent: "flex-start",
     backgroundColor: "#D1D9D7",
   },
+  containerLinear: {
+    flex: 1,
+    backgroundColor: "#4530b3",
+    alignContent: "center",
+    justifyContent: "center",
+  },
   text1: {
-    color: "#1561ad",
+    color: "#5C5E5E",
     fontSize: 25,
     fontWeight: "bold",
     marginTop: 25,
@@ -204,7 +223,7 @@ const styles = StyleSheet.create({
     marginTop: 25,
   },
   text5: {
-    color: "#1561ad",
+    color: "#5C5E5E",
     fontSize: 20,
     fontWeight: "bold",
     textAlign: "center",
