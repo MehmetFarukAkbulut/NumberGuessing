@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
       alignSelf: 'stretch',
       borderRadius: 15,
       paddingVertical: 10,
-      paddingHorizontal: 15 }
+      paddingHorizontal: 15,marginLeft:10,marginRight:10 }
     ,
     text1:{color:'#1561ad', fontSize: 25, fontWeight: 'bold', marginTop:25,textAlign:'center'},
     text2:{  fontSize: 15, fontWeight: '100', marginLeft:15, marginRight: 15,textAlign:'center' },
