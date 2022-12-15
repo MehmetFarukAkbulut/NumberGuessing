@@ -10,13 +10,13 @@ const navigator = createStackNavigator(
     Home: HomeScreen,
     Guess: GuessScreen,
     HowTo: HowToScreen,
-    WhoAmI: WhoAmIScreen
+    WhoAmI: WhoAmIScreen,
   },
   {
     initialRouteName: "Home",
     defaultNavigationOptions: {
       title: "Sayı Tahmin Oyunu",
-      headerStyle:{backgroundColor:'#728979'},
+      headerStyle: { backgroundColor: "#728979" },
       headerTitleStyle: { color: "white" },
     },
   }
