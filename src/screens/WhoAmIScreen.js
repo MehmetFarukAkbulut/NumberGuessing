@@ -22,7 +22,7 @@ const WhoAmIScreen = () => {
         return;
       }
       setText(text + LONG_TEXT[text.length]);
-    }, 10);
+    }, 1);
     return () => clearInterval(timer);
   }, [text]);
 
