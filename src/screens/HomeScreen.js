@@ -87,7 +87,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "stretch",
     justifyContent: "flex-start",
-    // backgroundColor: "#D1D9D7",
   },
   containerLinear: {
     flex: 1,
