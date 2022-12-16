@@ -1,17 +1,7 @@
 import React, { useState } from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  TextInput,
-  Button,
-  TouchableOpacity,
-  Linking,
-} from "react-native";
+import {View,Text,StyleSheet,TextInput,Button,TouchableOpacity,Linking} from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { LinearGradient } from "expo-linear-gradient";
-
-
 const GuessScreen = () => {
   const [correctNumber, setCorrectNumber] = useState(
     Math.floor(Math.random() * 100) + 1
@@ -79,89 +69,89 @@ const GuessScreen = () => {
   return (
     <View style={styles.container}>
       <LinearGradient
-      style={styles.containerLinear}
-      colors={["#282763","#d13670"]}
-      start={{ x:0 , y:0 }}
-      end={{ x: 0, y:1}}
-    >
-      <ScrollView>
-        <Text style={styles.text1}>Sayı Tahmin Oyununa Hoşgeldiniz!</Text>
-        <Text style={styles.text2}>
-          En fazla 10 tahminde 1 ile 100 arasında bir sayıyı tahmin etmeye
-          çalışın.
-        </Text>
-        <Text style={styles.text3}>Best score: {bestScore}</Text>
-        <Text style={styles.text5}>Sayıyı Tahmin Edin</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="Tahmininizi Girin: "
-          onChangeText={onChangeText}
-          value={guess}
-        />
-        <TouchableOpacity
-          onPress={onSubmit}
-          style={[styles.buttonstyle, { backgroundColor: "#fc1a64" }]}
-        >
-          <Text style={{ color: "#fff" }}>TAHMİN ET</Text>
-        </TouchableOpacity>
-        <Text
-          style={{
-            color: "#27f2f9",
-            fontSize: 20,
-            fontWeight: "bold",
-            marginLeft: 15,
-            marginRight: 15,
-            textAlign: "center",
-          }}
-        >
-          {result}
-        </Text>
-
-        {bestScore === 1 && (
-          <Button
-            title="Tek Tahmin Ödülü"
-            color="#4a8efd"
-            onPress={luckyPress}
-          />
-        )}
-        {numGuesses >= 10 && (
-          <Button title="Geçmiş Olsun" color="#000" onPress={deadPress} />
-        )}
+        style={styles.containerLinear}
+        colors={["#282763", "#d13670"]}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 0, y: 1 }}
+      >
         <ScrollView>
-          {guesses.map((guess, index) => (
-            <Text style={styles.text2} key={index}>
-              Tahmin {index + 1}: {guess}
-            </Text>
-          ))}
-        </ScrollView>
-        <TouchableOpacity
-          onPress={resetGame}
-          style={[styles.buttonstyle, { backgroundColor: "#6e66b1" }]}
-        >
-          <Text style={{ color: "#fff" }}>BAŞTAN BAŞLA</Text>
-        </TouchableOpacity>
-        <TextInput
-          style={styles.input}
-          placeholder="Player Name"
-          value={playerName}
-          onChangeText={onChangePlayerName}
-        />
-        <TouchableOpacity
-          onPress={submitRecord}
-          style={[styles.buttonstyle, { backgroundColor: "#191b46" }]}
-        >
-          <Text style={{ color: "#fff" }}>SKORUNU KAYDET</Text>
-        </TouchableOpacity>
+          <Text style={styles.text1}>Sayı Tahmin Oyununa Hoşgeldiniz!</Text>
+          <Text style={styles.text2}>
+            En fazla 10 tahminde 1 ile 100 arasında bir sayıyı tahmin etmeye
+            çalışın.
+          </Text>
+          <Text style={styles.text3}>Best score: {bestScore}</Text>
+          <Text style={styles.text5}>Sayıyı Tahmin Edin</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="Tahmininizi Girin: "
+            onChangeText={onChangeText}
+            value={guess}
+          />
+          <TouchableOpacity
+            onPress={onSubmit}
+            style={[styles.buttonstyle, { backgroundColor: "#fc1a64" }]}
+          >
+            <Text style={{ color: "#fff" }}>TAHMİN ET</Text>
+          </TouchableOpacity>
+          <Text
+            style={{
+              color: "#27f2f9",
+              fontSize: 20,
+              fontWeight: "bold",
+              marginLeft: 15,
+              marginRight: 15,
+              textAlign: "center",
+            }}
+          >
+            {result}
+          </Text>
 
-        {records.map(
-          (record, index) =>
-            record.bestScore > 0 && (
+          {bestScore === 1 && (
+            <Button
+              title="Tek Tahmin Ödülü"
+              color="#4a8efd"
+              onPress={luckyPress}
+            />
+          )}
+          {numGuesses >= 10 && (
+            <Button title="Geçmiş Olsun" color="#000" onPress={deadPress} />
+          )}
+          <ScrollView>
+            {guesses.map((guess, index) => (
               <Text style={styles.text2} key={index}>
-                Player {record.playerName}: {record.bestScore} defada bildi
+                Tahmin {index + 1}: {guess}
               </Text>
-            )
-        )}
-      </ScrollView>
+            ))}
+          </ScrollView>
+          <TouchableOpacity
+            onPress={resetGame}
+            style={[styles.buttonstyle, { backgroundColor: "#6e66b1" }]}
+          >
+            <Text style={{ color: "#fff" }}>BAŞTAN BAŞLA</Text>
+          </TouchableOpacity>
+          <TextInput
+            style={styles.input}
+            placeholder="Player Name"
+            value={playerName}
+            onChangeText={onChangePlayerName}
+          />
+          <TouchableOpacity
+            onPress={submitRecord}
+            style={[styles.buttonstyle, { backgroundColor: "#191b46" }]}
+          >
+            <Text style={{ color: "#fff" }}>SKORUNU KAYDET</Text>
+          </TouchableOpacity>
+
+          {records.map(
+            (record, index) =>
+              record.bestScore > 0 && (
+                <Text style={styles.text2} key={index}>
+                  Player {record.playerName}: {record.bestScore} defada bildi
+                </Text>
+              )
+          )}
+        </ScrollView>
       </LinearGradient>
     </View>
   );
@@ -218,7 +208,11 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   text3: {
-    color: "#fff", fontSize: 20, fontWeight: "bold", textAlign: "center" },
+    color: "#fff",
+    fontSize: 20,
+    fontWeight: "bold",
+    textAlign: "center",
+  },
   text4: {
     fontSize: 20,
     fontWeight: "bold",

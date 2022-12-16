@@ -16,22 +16,22 @@ const HowToScreen = () => {
       <Text style={styles.text2}>{" En fazla 10 tahminde 1 ile 100 arasında bir sayıyı tahmin etmeye çalışın. "}
       </Text>
       <Text style={styles.text2}>
-        {"Her tahmininizde tahmin sayısını ve hangi tahminleri yaptığınızı görebilirsiniz."}
+        {"Her tahmin yaptığınızda, kaydırılabilir bir listede kaçıncı tahmininizde hangi sayıyı tahmin ettiğinizi  görebilirsiniz."}
       </Text>
       <Text style={styles.text2}>
         {"Her yanlış tahminde daha küçük ya da daha büyük yönlendirmelerini görebilirsiniz."}
       </Text>
       <Text style={styles.text2}>
-        {"Tahmininiz doğru çıktığındaysa sayıyı kaçıncı tahminde bildiğinizi görebilirsiniz."}
+        {"Tahmininiz doğru çıktığındaysa tebrik mesajıyla beraber sayıyı kaçıncı tahminde bildiğinizi görebilirsiniz."}
       </Text>
       <Text style={styles.text2}>
-        {"Kaydetmek istediğiniz her skoru kaydetebilirsiniz. "}
+        {"Best Score yaptıktan sonra kaydetmek istediğiniz her skoru isterseniz gireceğiniz isimle kaydetebilirsiniz. "}
       </Text>
       <Text style={styles.text2}>
-        {"Gerçekten şanslıysanız ilk tahminde bilirsiniz. "}
+        {"Umarım çıkacak sürprizleri seversiniz!"}
 
       </Text>
-      <Text style={styles.text2}> Bol Şanslar! </Text>
+      <Text style={styles.text2}> {"Bol Şanslar!"} </Text>
       </ScrollView></LinearGradient>
     </View>
   );
@@ -53,6 +53,7 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: "bold",
     marginTop: 25,
+    marginBottom: 25,
     textAlign: "center",
   },
   text2: {

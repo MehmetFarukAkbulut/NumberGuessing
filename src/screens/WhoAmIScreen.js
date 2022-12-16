@@ -1,15 +1,6 @@
 import React, { useState, useEffect } from "react";
-import {
-  Text,
-  StyleSheet,
-  ScrollView,
-  View,
-  Linking,
-  Button,
-  TouchableOpacity,
-} from "react-native";
+import {Text,StyleSheet,ScrollView,View,Linking,Button,TouchableOpacity} from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-
 
 const WhoAmIScreen = () => {
   const LONG_TEXT =
@@ -40,33 +31,32 @@ const WhoAmIScreen = () => {
   return (
     <View style={styles.container}>
       <LinearGradient
-      style={styles.containerLinear}
-      colors={["#282763","#d13670"]}
-      start={{ x:0 , y:0 }}
-      end={{ x: 0, y:1}}
-    >
-      <ScrollView>
-        <Text style={styles.text6}>{text}</Text>
-      </ScrollView>
-      <TouchableOpacity
-        onPress={instagram}
-        style={[styles.buttonstyle, { backgroundColor: "#F77737" }]}
+        style={styles.containerLinear}
+        colors={["#282763", "#d13670"]}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 0, y: 1 }}
       >
-        <Text style={{ textAlign: "center", color: "#fff" }}>INSTAGRAM</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        onPress={linkedin}
-        style={[styles.buttonstyle, { backgroundColor: "#0072b1" }]}
-      >
-        <Text style={{ textAlign: "center", color: "#fff" }}>LINKEDIN</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        onPress={github}
-        style={[styles.buttonstyle, { backgroundColor: "#171515" }]}
-      >
-        <Text style={{ textAlign: "center", color: "#fff" }}>GITHUB</Text>
-      </TouchableOpacity>
-      
+        <ScrollView>
+          <Text style={styles.text6}>{text}</Text>
+        </ScrollView>
+        <TouchableOpacity
+          onPress={instagram}
+          style={[styles.buttonstyle, { backgroundColor: "#F77737" }]}
+        >
+          <Text style={{ textAlign: "center", color: "#fff" }}>INSTAGRAM</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={linkedin}
+          style={[styles.buttonstyle, { backgroundColor: "#0072b1" }]}
+        >
+          <Text style={{ textAlign: "center", color: "#fff" }}>LINKEDIN</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={github}
+          style={[styles.buttonstyle, { backgroundColor: "#171515" }]}
+        >
+          <Text style={{ textAlign: "center", color: "#fff" }}>GITHUB</Text>
+        </TouchableOpacity>
       </LinearGradient>
     </View>
   );
