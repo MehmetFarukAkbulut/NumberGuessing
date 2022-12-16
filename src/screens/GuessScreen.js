@@ -118,6 +118,7 @@ const GuessScreen = () => {
             <Button title="Geçmiş Olsun" color="#000" onPress={deadPress} />
           )}
           <ScrollView>
+{/* Buraya bak */}
             {guesses.map((guess, index) => (
               <Text style={styles.text2} key={index}>
                 Tahmin {index + 1}: {guess}
@@ -142,7 +143,7 @@ const GuessScreen = () => {
           >
             <Text style={{ color: "#fff" }}>SKORUNU KAYDET</Text>
           </TouchableOpacity>
-
+{/* Buraya bak */}
           {records.map(
             (record, index) =>
               record.bestScore > 0 && (
