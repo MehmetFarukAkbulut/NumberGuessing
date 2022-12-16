@@ -3,6 +3,18 @@ import {Text,StyleSheet,ScrollView,View,Linking,Button,TouchableOpacity,BackHand
 import { LinearGradient } from "expo-linear-gradient";
 
 const HomeScreen = ({ navigation }) => {
+  const backPressed = () => {
+    Alert.alert(
+      'Uygulamadan Çıkış',
+      'Çıkış Yapmak İstediğinizden Emin Misiniz?',
+      [
+        { text: 'Hayır', onPress: () => console.log('Cancel'), style: 'cancel' },
+        { text: 'Evet', onPress: () => BackHandler.exitApp() },
+      ],
+      { cancelable: false }
+    );
+    return true;
+  }
 
   return (<View style={styles.container}>
     <LinearGradient
@@ -34,8 +46,8 @@ const HomeScreen = ({ navigation }) => {
             <Text style={{ color: "#fff" }}>HAKKIMDA</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => navigation.navigate("Exit")}
-            style={[styles.buttonstyle, { backgroundColor: "#b0bfc8"}]}
+            onPress={() => backPressed()}
+            style={[styles.buttonstyle, { backgroundColor: "#000"}]}
           >
             <Text style={{ color: "#fff" }}>ÇIKIŞ</Text>
           </TouchableOpacity>

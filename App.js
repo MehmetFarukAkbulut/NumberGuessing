@@ -4,7 +4,6 @@ import GuessScreen from "./src/screens/GuessScreen";
 import HomeScreen from "./src/screens/HomeScreen";
 import HowToScreen from "./src/screens/HowToScreen";
 import WhoAmIScreen from "./src/screens/WhoAmIScreen";
-import ExitScreen from "./src/screens/ExitScreen";
 
 
 const navigator = createStackNavigator(
@@ -13,7 +12,6 @@ const navigator = createStackNavigator(
     Guess: GuessScreen,
     HowTo: HowToScreen,
     WhoAmI: WhoAmIScreen,
-    Exit: ExitScreen,
     
   },
   {
