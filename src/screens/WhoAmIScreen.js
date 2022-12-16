@@ -41,7 +41,7 @@ const WhoAmIScreen = () => {
     <View style={styles.container}>
       <LinearGradient
       style={styles.containerLinear}
-      colors={["#85D6E9","#E99885"]}
+      colors={["#282763","#d13670"]}
       start={{ x:0 , y:0 }}
       end={{ x: 0, y:1}}
     >
@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
   text6: {
-    color: "#000",
+    color: "#fff",
     fontSize: 20,
     fontWeight: "200",
     textAlign: "center",

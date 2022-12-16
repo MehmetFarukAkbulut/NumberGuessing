@@ -1,21 +1,13 @@
 import React, { useState } from "react";
-import {
-  Text,
-  StyleSheet,
-  View,
-  Button,
-  TextInput,
-  TouchableOpacity,
-} from "react-native";
+import {Text,StyleSheet,View,Button,TextInput, TouchableOpacity} from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
 const HomeScreen = ({ navigation }) => {
-  const [playerName, setPlayerName] = useState("");
 
   return (<View style={styles.container}>
     <LinearGradient
       style={styles.containerLinear}
-      colors={["#85D6E9","#E99885"]}
+      colors={["#282763","#d13670"]}
       start={{ x:0 , y:0 }}
       end={{ x: 0, y:1}}
     >
@@ -25,29 +17,28 @@ const HomeScreen = ({ navigation }) => {
         <View style={styles.buttonView1}>
           <TouchableOpacity
             onPress={() => navigation.navigate("Guess")}
-            style={[styles.buttonstyle, { backgroundColor: "#C7D9FF" }]}
+            style={[styles.buttonstyle, { backgroundColor: "#fc1a64" }]}
           >
             <Text style={{ color: "#fff" }}>OYUNA BAŞLA</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => navigation.navigate("HowTo")}
-            style={[styles.buttonstyle, { backgroundColor: "#F0B2C9" }]}
+            style={[styles.buttonstyle, { backgroundColor: "#4896fb" }]}
           >
             <Text style={{ color: "#fff" }}>NASIL OYNANIR</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => navigation.navigate("WhoAmI")}
-            style={[styles.buttonstyle, { backgroundColor: "#796DCD" }]}
+            style={[styles.buttonstyle, { backgroundColor: "#282763" }]}
           >
             <Text style={{ color: "#fff" }}>HAKKIMDA</Text>
           </TouchableOpacity>
-          {/* <TextInput
-            style={styles.input}
-            placeholder="Lütfen adınızı giriniz"
-            value={playerName}
-            onChangeText={(text) => setPlayerName(text)}
-          />
-          <Text style={styles.text3}>Merhaba {playerName}!</Text> */}
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Exit")}
+            style={[styles.buttonstyle, { backgroundColor: "#b0bfc8"}]}
+          >
+            <Text style={{ color: "#fff" }}>ÇIKIŞ</Text>
+          </TouchableOpacity>
         </View>
       
     </LinearGradient></View>
@@ -71,10 +62,12 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     paddingVertical: 10,
     paddingHorizontal: 15,
+    marginBottom: 10,
   },
   buttonView1: {
     flex: 1,
     alignSelf: "stretch",
+    marginTop: 10,
     marginLeft: 10,
     marginRight: 10,
   },
@@ -91,7 +84,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   text1: {
-    color: "#5C5E5E",
+    color: "#dbd094",
     fontSize: 25,
     fontWeight: "bold",
     marginTop: 25,

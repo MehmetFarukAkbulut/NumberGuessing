@@ -80,7 +80,7 @@ const GuessScreen = () => {
     <View style={styles.container}>
       <LinearGradient
       style={styles.containerLinear}
-      colors={["#85D6E9","#E99885"]}
+      colors={["#282763","#d13670"]}
       start={{ x:0 , y:0 }}
       end={{ x: 0, y:1}}
     >
@@ -100,13 +100,13 @@ const GuessScreen = () => {
         />
         <TouchableOpacity
           onPress={onSubmit}
-          style={[styles.buttonstyle, { backgroundColor: "#796DCD" }]}
+          style={[styles.buttonstyle, { backgroundColor: "#fc1a64" }]}
         >
           <Text style={{ color: "#fff" }}>TAHMİN ET</Text>
         </TouchableOpacity>
         <Text
           style={{
-            color: "#1561ad",
+            color: "#27f2f9",
             fontSize: 20,
             fontWeight: "bold",
             marginLeft: 15,
@@ -120,7 +120,7 @@ const GuessScreen = () => {
         {bestScore === 1 && (
           <Button
             title="Tek Tahmin Ödülü"
-            color="#ffc0cb"
+            color="#4a8efd"
             onPress={luckyPress}
           />
         )}
@@ -136,7 +136,7 @@ const GuessScreen = () => {
         </ScrollView>
         <TouchableOpacity
           onPress={resetGame}
-          style={[styles.buttonstyle, { backgroundColor: "#F0B2C9" }]}
+          style={[styles.buttonstyle, { backgroundColor: "#6e66b1" }]}
         >
           <Text style={{ color: "#fff" }}>BAŞTAN BAŞLA</Text>
         </TouchableOpacity>
@@ -148,7 +148,7 @@ const GuessScreen = () => {
         />
         <TouchableOpacity
           onPress={submitRecord}
-          style={[styles.buttonstyle, { backgroundColor: "#C7D9FF" }]}
+          style={[styles.buttonstyle, { backgroundColor: "#191b46" }]}
         >
           <Text style={{ color: "#fff" }}>SKORUNU KAYDET</Text>
         </TouchableOpacity>
@@ -188,6 +188,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     marginLeft: 10,
     marginRight: 10,
+    marginBottom: 10,
   },
   container: {
     flex: 1,
@@ -202,20 +203,22 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   text1: {
-    color: "#5C5E5E",
+    color: "#fff",
     fontSize: 25,
     fontWeight: "bold",
     marginTop: 25,
     textAlign: "center",
   },
   text2: {
+    color: "#fff",
     fontSize: 15,
     fontWeight: "100",
     marginLeft: 15,
     marginRight: 15,
     textAlign: "center",
   },
-  text3: { fontSize: 20, fontWeight: "bold", textAlign: "center" },
+  text3: {
+    color: "#fff", fontSize: 20, fontWeight: "bold", textAlign: "center" },
   text4: {
     fontSize: 20,
     fontWeight: "bold",
@@ -223,7 +226,7 @@ const styles = StyleSheet.create({
     marginTop: 25,
   },
   text5: {
-    color: "#5C5E5E",
+    color: "#fff",
     fontSize: 20,
     fontWeight: "bold",
     textAlign: "center",

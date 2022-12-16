@@ -7,7 +7,7 @@ const HowToScreen = () => {
     <View style={styles.container}>
       <LinearGradient
       style={styles.containerLinear}
-      colors={["#85D6E9","#E99885"]}
+      colors={["#282763","#d13670"]}
       start={{ x:0 , y:0 }}
       end={{ x: 0, y:1}}
     >
@@ -49,13 +49,14 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   text1: {
-    color: "#1561ad",
+    color: "#dbd094",
     fontSize: 25,
     fontWeight: "bold",
     marginTop: 25,
     textAlign: "center",
   },
   text2: {
+    color: "#fff",
     fontSize: 15,
     fontWeight: "100",
     marginLeft: 15,
