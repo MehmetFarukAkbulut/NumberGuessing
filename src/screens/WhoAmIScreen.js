@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {Text,StyleSheet,ScrollView,View,Linking,TouchableOpacity} from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import { StatusBar } from "expo-status-bar";
 import * as MailComposer from 'expo-mail-composer';
 
 const WhoAmIScreen = () => {
