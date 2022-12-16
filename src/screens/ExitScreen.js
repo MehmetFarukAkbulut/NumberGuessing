@@ -1,10 +1,29 @@
 import React, { useState, useEffect } from "react";
-import {Text,StyleSheet,ScrollView,View,Linking,Button,TouchableOpacity,} from "react-native";
+import {Text,StyleSheet,ScrollView,View,Linking,Button,TouchableOpacity,BackHandler, Alert} from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
 
 const ExitScreen = () => {
+    useEffect(() => {
+      BackHandler.addEventListener('hardwareBackPress', backPressed);
+      return () => {
+        BackHandler.removeEventListener('hardwareBackPress', backPressed);
+      };
+    }, []);
   
+    const backPressed = () => {
+        Alert.alert(
+          'Exit App',
+          'Do you want to exit?',
+          [
+            { text: 'No', onPress: () => console.log('Cancel Pressed'), style: 'cancel' },
+            { text: 'Yes', onPress: () => BackHandler.exitApp() },
+          ],
+          { cancelable: false }
+        );
+        return true;
+      }
+    
   return (
     <View style={styles.container}>
       <LinearGradient
@@ -12,7 +31,13 @@ const ExitScreen = () => {
       colors={["#282763","#d13670"]}
       start={{ x:0 , y:0 }}
       end={{ x: 0, y:1}}
-    >
+    > 
+    <TouchableOpacity
+    onPress={() => {backPressed}}
+    style={[styles.buttonstyle, { backgroundColor: "#000"}]}
+  >
+    <Text style={{ color: "#fff" }}>ÇIKIŞ</Text>
+  </TouchableOpacity>
       
       </LinearGradient>
     </View>

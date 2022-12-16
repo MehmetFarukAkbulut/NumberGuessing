@@ -88,7 +88,7 @@ const GuessScreen = () => {
         <Text style={styles.text1}>Sayı Tahmin Oyununa Hoşgeldiniz!</Text>
         <Text style={styles.text2}>
           En fazla 10 tahminde 1 ile 100 arasında bir sayıyı tahmin etmeye
-          çalışın.{" "}
+          çalışın.
         </Text>
         <Text style={styles.text3}>Best score: {bestScore}</Text>
         <Text style={styles.text5}>Sayıyı Tahmin Edin</Text>

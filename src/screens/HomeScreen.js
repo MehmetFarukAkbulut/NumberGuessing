@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import {Text,StyleSheet,View,Button,TextInput, TouchableOpacity} from "react-native";
+import React, { useState, useEffect } from "react";
+import {Text,StyleSheet,ScrollView,View,Linking,Button,TouchableOpacity,BackHandler, Alert} from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
 const HomeScreen = ({ navigation }) => {
