@@ -1,10 +1,29 @@
 import React, { useState, useEffect } from "react";
-import {Text,StyleSheet,ScrollView,View,Linking,Button,TouchableOpacity} from "react-native";
+import {Text,StyleSheet,ScrollView,View,Linking,TouchableOpacity} from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
+import { StatusBar } from "expo-status-bar";
+import * as MailComposer from 'expo-mail-composer';
 
 const WhoAmIScreen = () => {
+  const [isAvailable, setIsAvailable] = useState(false);
+  useEffect(() => {
+    async function checkAvailability() {
+      const isMailAvailable = await MailComposer.isAvailableAsync();
+      setIsAvailable(isMailAvailable);
+    }
+
+    checkAvailability();
+  }, []);
+
+  const sendMail =() =>{
+    MailComposer.composeAsync({
+      subject: "React Native uygulaman bir harika!",
+      body: "Uygulamanı çok beğendim!",
+      recipients: ["mefarukakbulut@gmail.com"]
+    });
+  };
   const LONG_TEXT =
-    "Benim adım Mehmet Faruk Akbulut. Trakya Üniversitesinde, Bilgisayar Mühendisliği bölümü öğrencisiyim. Bu Sayı Tahmin Oyunu benim Mobil uygulama dersi final ödevim. Umarım keyif almışsınızdır.Uygulamanın kodlarını aşağıdaki Github hesabımdan bulabilirsiniz. Bana aşağıdaki hesaplarımdan ulaşabilirsiniz. Geri dönüşlerinizi bekliyorum...";
+    "Benim adım Mehmet Faruk Akbulut. Trakya Üniversitesinde, Bilgisayar Mühendisliği bölümü öğrencisiyim. Bu Sayı Tahmin Oyunu benim Mobil uygulama dersi final ödevim. Umarım keyif almışsınızdır. Uygulamanın kodlarını aşağıdaki Github hesabımdan bulabilirsiniz. Bana aşağıdaki hesaplarımdan ulaşabilirsiniz. Geri dönüşlerinizi bekliyorum...";
   const [text, setText] = React.useState("");
   React.useEffect(() => {
     const timer = setInterval(() => {
@@ -57,6 +76,13 @@ const WhoAmIScreen = () => {
         >
           <Text style={{ textAlign: "center", color: "#fff" }}>GITHUB</Text>
         </TouchableOpacity>
+        {isAvailable ? 
+        <TouchableOpacity
+          onPress={sendMail}
+          style={[styles.buttonstyle, { backgroundColor: "#fc1a64" }]}
+        >
+          <Text style={{ textAlign: "center", color: "#fff" }}>SEND MAIL</Text>
+        </TouchableOpacity> : <Text>Email Kullanılabilir Değil</Text>}
       </LinearGradient>
     </View>
   );
