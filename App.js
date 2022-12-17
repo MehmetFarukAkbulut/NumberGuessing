@@ -18,8 +18,8 @@ const navigator = createStackNavigator(
     initialRouteName: "Home",
     defaultNavigationOptions: {
       title: "Sayı Tahmin Oyunu",
-      headerStyle: { backgroundColor: "#fc1a64" },
-      headerTitleStyle: { color: "white",alignSelf:"center" },
+      headerStyle: { backgroundColor: "#58508d" },
+      headerTitleStyle: { color: "#ffa600",alignSelf:"center" },
     },
   }
 );

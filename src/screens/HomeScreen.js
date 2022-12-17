@@ -15,11 +15,10 @@ const HomeScreen = ({ navigation }) => {
     );
     return true;
   }
-
   return (<View style={styles.container}>
     <LinearGradient
       style={styles.containerLinear}
-      colors={["#282763","#d13670"]}
+      colors={["#58508d", "#003f5c"]}
       start={{ x:0 , y:0 }}
       end={{ x: 0, y:1}}
     >
@@ -29,19 +28,19 @@ const HomeScreen = ({ navigation }) => {
         <View style={styles.buttonView1}>
           <TouchableOpacity
             onPress={() => navigation.navigate("Guess")}
-            style={[styles.buttonstyle, { backgroundColor: "#fc1a64" }]}
+            style={[styles.buttonstyle, { backgroundColor: "#ff6361" }]}
           >
             <Text style={{ color: "#fff" }}>OYUNA BAŞLA</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => navigation.navigate("HowTo")}
-            style={[styles.buttonstyle, { backgroundColor: "#4896fb" }]}
+            style={[styles.buttonstyle, { backgroundColor: "#ffa600" }]}
           >
             <Text style={{ color: "#fff" }}>NASIL OYNANIR</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => navigation.navigate("WhoAmI")}
-            style={[styles.buttonstyle, { backgroundColor: "#282763" }]}
+            style={[styles.buttonstyle, { backgroundColor: "#bc5090" }]}
           >
             <Text style={{ color: "#fff" }}>HAKKIMDA</Text>
           </TouchableOpacity>
@@ -71,7 +70,7 @@ const styles = StyleSheet.create({
   },
   buttonstyle: {
     alignItems: "center",
-    borderRadius: 15,
+    borderRadius: 5,
     paddingVertical: 10,
     paddingHorizontal: 15,
     marginBottom: 10,
@@ -95,7 +94,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   text1: {
-    color: "#dbd094",
+    color: "#fff",
     fontSize: 25,
     fontWeight: "bold",
     marginTop: 25,

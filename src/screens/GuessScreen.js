@@ -70,7 +70,7 @@ const GuessScreen = () => {
     <View style={styles.container}>
       <LinearGradient
         style={styles.containerLinear}
-        colors={["#282763", "#d13670"]}
+        colors={["#58508d", "#003f5c"]}
         start={{ x: 0, y: 0 }}
         end={{ x: 0, y: 1 }}
       >
@@ -90,13 +90,13 @@ const GuessScreen = () => {
           />
           <TouchableOpacity
             onPress={onSubmit}
-            style={[styles.buttonstyle, { backgroundColor: "#fc1a64" }]}
+            style={[styles.buttonstyle, { backgroundColor: "#ff6361" }]}
           >
             <Text style={{ color: "#fff" }}>TAHMİN ET</Text>
           </TouchableOpacity>
           <Text
             style={{
-              color: "#27f2f9",
+              color: "#fff",
               fontSize: 20,
               fontWeight: "bold",
               marginLeft: 15,
@@ -108,14 +108,20 @@ const GuessScreen = () => {
           </Text>
 
           {bestScore === 1 && (
-            <Button
-              title="Tek Tahmin Ödülü"
-              color="#4a8efd"
-              onPress={luckyPress}
-            />
+            <TouchableOpacity
+            onPress={luckyPress}
+            style={[styles.buttonstyle, { backgroundColor: "#bc5090" }]}
+          >
+            <Text style={{ color: "#fff" }}>TEK TAHMİN ÖDÜLÜ</Text>
+          </TouchableOpacity>
           )}
           {numGuesses >= 10 && (
-            <Button title="Geçmiş Olsun" color="#000" onPress={deadPress} />
+            <TouchableOpacity
+            onPress={deadPress}
+            style={[styles.buttonstyle, { backgroundColor: "#000" }]}
+            >
+              <Text style={{ color: "#fff" }}>GEÇMİŞ OLSUN</Text>
+             </TouchableOpacity>
           )}
           <ScrollView>
 {/* Buraya bak */}
@@ -127,7 +133,7 @@ const GuessScreen = () => {
           </ScrollView>
           <TouchableOpacity
             onPress={resetGame}
-            style={[styles.buttonstyle, { backgroundColor: "#6e66b1" }]}
+            style={[styles.buttonstyle, { backgroundColor: "#ffa600" }]}
           >
             <Text style={{ color: "#fff" }}>BAŞTAN BAŞLA</Text>
           </TouchableOpacity>
@@ -139,7 +145,7 @@ const GuessScreen = () => {
           />
           <TouchableOpacity
             onPress={submitRecord}
-            style={[styles.buttonstyle, { backgroundColor: "#191b46" }]}
+            style={[styles.buttonstyle, { backgroundColor: "#bc5090" }]}
           >
             <Text style={{ color: "#fff" }}>SKORUNU KAYDET</Text>
           </TouchableOpacity>
@@ -167,14 +173,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     borderColor: "#ccc",
     borderWidth: 1,
-    borderRadius: 15,
+    borderRadius: 5,
     fontSize: 16,
     marginLeft: 10,
     marginRight: 15,
   },
   buttonstyle: {
     alignItems: "center",
-    borderRadius: 15,
+    borderRadius: 5,
     paddingVertical: 10,
     paddingHorizontal: 15,
     marginLeft: 10,
@@ -194,7 +200,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   text1: {
-    color: "#fff",
+    color: "#ffa600",
     fontSize: 25,
     fontWeight: "bold",
     marginTop: 25,
@@ -209,7 +215,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   text3: {
-    color: "#fff",
+    color: "#ffa600",
     fontSize: 20,
     fontWeight: "bold",
     textAlign: "center",

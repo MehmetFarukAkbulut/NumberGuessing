@@ -50,7 +50,7 @@ const WhoAmIScreen = () => {
     <View style={styles.container}>
       <LinearGradient
         style={styles.containerLinear}
-        colors={["#282763", "#d13670"]}
+        colors={["#58508d", "#003f5c"]}
         start={{ x: 0, y: 0 }}
         end={{ x: 0, y: 1 }}
       >
@@ -78,7 +78,7 @@ const WhoAmIScreen = () => {
         {isAvailable ? 
         <TouchableOpacity
           onPress={sendMail}
-          style={[styles.buttonstyle, { backgroundColor: "#fc1a64" }]}
+          style={[styles.buttonstyle, { backgroundColor: "#bc5090" }]}
         >
           <Text style={{ textAlign: "center", color: "#fff" }}>SEND MAIL</Text>
         </TouchableOpacity> : <Text>Email Kullanılabilir Değil</Text>}
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
   },
   buttonstyle: {
     alignSelf: "stretch",
-    borderRadius: 15,
+    borderRadius: 5,
     paddingVertical: 10,
     paddingHorizontal: 15,
     marginLeft: 10,

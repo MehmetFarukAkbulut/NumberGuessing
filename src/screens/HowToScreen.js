@@ -9,11 +9,11 @@ const HowToScreen = () => {
     <View style={styles.container}>
       <LinearGradient
       style={styles.containerLinear}
-      colors={["#282763","#d13670"]}
+      colors={["#58508d", "#003f5c"]}
       start={{ x:0 , y:0 }}
       end={{ x: 0, y:1}}
     >
-      <Text style={styles.text1}>Sayı Tahmin Oyunu Nasıl Oynanır!</Text>
+      <Text style={styles.text1}>Sayı Tahmin Oyunu Nasıl Oynanır?</Text>
       <FlatList data= {instructions} renderItem={({item,index})=><Text key={index} style={styles.text2}>{item}</Text>} />
       </LinearGradient>
     </View>
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   text1: {
-    color: "#dbd094",
+    color: "#ffa600",
     fontSize: 25,
     fontWeight: "bold",
     marginTop: 25,
