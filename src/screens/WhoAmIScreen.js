@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from "react";
-import {Text,StyleSheet,ScrollView,View,Linking,TouchableOpacity} from "react-native";
+import {
+  Text,
+  StyleSheet,
+  ScrollView,
+  View,
+  Linking,
+  TouchableOpacity,
+} from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import * as MailComposer from 'expo-mail-composer';
+import * as MailComposer from "expo-mail-composer";
 
 const WhoAmIScreen = () => {
   const [isAvailable, setIsAvailable] = useState(false);
@@ -14,11 +21,11 @@ const WhoAmIScreen = () => {
     checkAvailability();
   }, []);
 
-  const sendMail =() =>{
+  const sendMail = () => {
     MailComposer.composeAsync({
       subject: "React Native uygulaman bir harika!",
       body: "Uygulamanı çok beğendim!",
-      recipients: ["mefarukakbulut@gmail.com"]
+      recipients: ["mefarukakbulut@gmail.com"],
     });
   };
   const LONG_TEXT =
@@ -31,7 +38,7 @@ const WhoAmIScreen = () => {
         return;
       }
       setText(text + LONG_TEXT[text.length]);
-    }, 1);
+    }, 0);
     return () => clearInterval(timer);
   }, [text]);
 
@@ -75,13 +82,18 @@ const WhoAmIScreen = () => {
         >
           <Text style={{ textAlign: "center", color: "#fff" }}>GITHUB</Text>
         </TouchableOpacity>
-        {isAvailable ? 
-        <TouchableOpacity
-          onPress={sendMail}
-          style={[styles.buttonstyle, { backgroundColor: "#bc5090" }]}
-        >
-          <Text style={{ textAlign: "center", color: "#fff" }}>SEND MAIL</Text>
-        </TouchableOpacity> : <Text>Email Kullanılabilir Değil</Text>}
+        {isAvailable ? (
+          <TouchableOpacity
+            onPress={sendMail}
+            style={[styles.buttonstyle, { backgroundColor: "#bc5090" }]}
+          >
+            <Text style={{ textAlign: "center", color: "#fff" }}>
+              SEND MAIL
+            </Text>
+          </TouchableOpacity>
+        ) : (
+          <Text>Email Kullanılabilir Değil</Text>
+        )}
       </LinearGradient>
     </View>
   );

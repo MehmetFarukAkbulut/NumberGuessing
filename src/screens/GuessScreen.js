@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import {View,Text,StyleSheet,TextInput,Button,TouchableOpacity,Linking} from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TextInput,
+  Button,
+  TouchableOpacity,
+  Linking,
+} from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { LinearGradient } from "expo-linear-gradient";
 const GuessScreen = () => {
@@ -26,7 +34,7 @@ const GuessScreen = () => {
     setNumGuesses(0);
     setResult("");
     setGuesses([]);
-    setBestScore(0);
+    //setBestScore(0);
   };
 
   const onChangeText = (text) => setGuess(text);
@@ -109,22 +117,22 @@ const GuessScreen = () => {
 
           {bestScore === 1 && (
             <TouchableOpacity
-            onPress={luckyPress}
-            style={[styles.buttonstyle, { backgroundColor: "#bc5090" }]}
-          >
-            <Text style={{ color: "#fff" }}>TEK TAHMİN ÖDÜLÜ</Text>
-          </TouchableOpacity>
+              onPress={luckyPress}
+              style={[styles.buttonstyle, { backgroundColor: "#bc5090" }]}
+            >
+              <Text style={{ color: "#fff" }}>TEK TAHMİN ÖDÜLÜ</Text>
+            </TouchableOpacity>
           )}
           {numGuesses >= 10 && (
             <TouchableOpacity
-            onPress={deadPress}
-            style={[styles.buttonstyle, { backgroundColor: "#000" }]}
+              onPress={deadPress}
+              style={[styles.buttonstyle, { backgroundColor: "#000" }]}
             >
               <Text style={{ color: "#fff" }}>GEÇMİŞ OLSUN</Text>
-             </TouchableOpacity>
+            </TouchableOpacity>
           )}
           <ScrollView>
-{/* Buraya bak */}
+            {/* Buraya bak FlatListle oluştur*/}
             {guesses.map((guess, index) => (
               <Text style={styles.text2} key={index}>
                 Tahmin {index + 1}: {guess}
@@ -149,7 +157,7 @@ const GuessScreen = () => {
           >
             <Text style={{ color: "#fff" }}>SKORUNU KAYDET</Text>
           </TouchableOpacity>
-{/* Buraya bak */}
+          {/* Buraya bak FlatListle oluştur*/}
           {records.map(
             (record, index) =>
               record.bestScore > 0 && (
