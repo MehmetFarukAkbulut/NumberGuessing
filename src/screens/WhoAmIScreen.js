@@ -38,7 +38,7 @@ const WhoAmIScreen = () => {
         return;
       }
       setText(text + LONG_TEXT[text.length]);
-    }, 0);
+    }, 20);
     return () => clearInterval(timer);
   }, [text]);
 

@@ -90,12 +90,14 @@ const GuessScreen = () => {
           </Text>
           <Text style={styles.text3}>Best score: {bestScore}</Text>
           <Text style={styles.text5}>Sayıyı Tahmin Edin</Text>
+          <View style={[styles.buttonstyle]}>
           <TextInput
             style={styles.input}
             placeholder="Tahmininizi Girin: "
             onChangeText={onChangeText}
             value={guess}
           />
+          </View>
           <TouchableOpacity
             onPress={onSubmit}
             style={[styles.buttonstyle, { backgroundColor: "#ff6361" }]}
@@ -132,7 +134,6 @@ const GuessScreen = () => {
             </TouchableOpacity>
           )}
           <ScrollView>
-            {/* Buraya bak FlatListle oluştur*/}
             {guesses.map((guess, index) => (
               <Text style={styles.text2} key={index}>
                 Tahmin {index + 1}: {guess}
@@ -145,19 +146,20 @@ const GuessScreen = () => {
           >
             <Text style={{ color: "#fff" }}>BAŞTAN BAŞLA</Text>
           </TouchableOpacity>
+          <View style={[styles.buttonstyle]}>
           <TextInput
             style={styles.input}
             placeholder="Player Name"
             value={playerName}
             onChangeText={onChangePlayerName}
           />
+          </View>
           <TouchableOpacity
             onPress={submitRecord}
             style={[styles.buttonstyle, { backgroundColor: "#bc5090" }]}
           >
             <Text style={{ color: "#fff" }}>SKORUNU KAYDET</Text>
           </TouchableOpacity>
-          {/* Buraya bak FlatListle oluştur*/}
           {records.map(
             (record, index) =>
               record.bestScore > 0 && (
@@ -183,8 +185,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 5,
     fontSize: 16,
-    marginLeft: 10,
-    marginRight: 15,
+    marginLeft: 0,
+    marginRight: 0,
   },
   buttonstyle: {
     alignItems: "center",

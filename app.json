@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "newapp",
-    "slug": "newapp",
+    "name": "Sayi Tahmin Oyunu",
+    "slug": "SayiTahminOyunu",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -21,6 +21,8 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.sayi.tahmin.oyunu",
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
@@ -28,6 +30,11 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "e72f2fa7-8727-4008-84a0-a4495f1e17a1"
+      }
     }
   }
 }
