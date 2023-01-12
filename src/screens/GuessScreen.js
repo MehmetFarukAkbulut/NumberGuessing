@@ -1,3 +1,15 @@
+// Bu kod, "GuessScreen" adında bir React Native bileşenini oluşturur 
+// ve kullanıcının 1 ile 100 arasında bir sayıyı 10 tahmin veya daha azda 
+// tahmin etmeye çalıştığı bir oyunu yaratır. Bileşen useState hook'unu 
+// kullanarak oyunun durumunu yönetir, doğru sayı, kullanıcının mevcut 
+// tahmini, yapılan tahmin sayısı, tahminin sonucu, önceki tahminlerin 
+// bir dizisi, en iyi skor, oyuncunun adı ve kayıtların bir dizisi dahil. 
+// Bileşen ayrıca metin girişini işleme, bir tahmin yapmayı, oyunu 
+// sıfırlamayı ve belirli düğmelerine basıldığında dış web sitelerine 
+// bağlantı kurmayı işleyen birçok işlev de içermektedir. Bileşen ayrıca 
+// expo-linear-gradient kütüphanesinden LinearGradient bileşenini 
+// kullanarak oyun ekranının arka planı için bir gradient oluşturur.
+
 import React, { useState } from "react";
 import {
   View,

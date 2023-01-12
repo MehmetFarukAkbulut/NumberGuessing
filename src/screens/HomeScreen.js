@@ -1,3 +1,14 @@
+// Bu kod, "HomeScreen" adında bir React Native bileşeni oluşturur 
+// ve uygulamanın anasayfası olarak render edilir. Bileşen, useEffect 
+// kanca kullanarak cihazın geri düğmesine dinleyen bir olay dinleyicisi
+//  ekler ve geri düğmeye basıldığında kullanıcıya uygulamadan çıkmak 
+//  istediğini soran bir uyarı oluşturur. Ayrıca, 'navigation' prop'unu 
+//  kullanır, böylece düğmeler basıldığında diğer ekranlara geçiş yapar. 
+//  Bileşen ayrıca expo-linear-gradient kütüphanesinden LinearGradient 
+//  bileşenini kullanarak anasayfanın arka planı için bir gradient 
+//  oluşturur. Bileşen ayrıca 'TouchableOpacity' ve 'Alert' bileşenleri 
+//  kullanarak butonları ve alert diyalogları oluşturur.
+
 import React, { useState, useEffect } from "react";
 import {Text,StyleSheet,View,TouchableOpacity,BackHandler, Alert} from "react-native";
 import { LinearGradient } from "expo-linear-gradient";

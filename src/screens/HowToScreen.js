@@ -1,3 +1,11 @@
+// Bu kod, "HowToScreen" adında bir React Native bileşenini oluşturur ve 
+// "GuessScreen" oyununun nasıl oynandığını gösterir. Talimatlar "instructions" 
+// adında bir dizi olarak saklanır ve FlatList bileşeni kullanılarak görüntülenir. 
+// Talimatlar ScrollView kullanılarak görüntülenir ve kullanıcının talimatları 
+// kaydırmasına izin verir. Bileşen ayrıca expo-linear-gradient kütüphanesinden 
+// LinearGradient bileşenini kullanarak oyun ekranının arka planı için bir gradient 
+// oluşturur. Bileşen sadece ekranda metin görüntüler ve kullanıcı girdisi işlememektedir.
+
 import React from "react";
 import { Text, StyleSheet, View,ScrollView,FlatList } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";

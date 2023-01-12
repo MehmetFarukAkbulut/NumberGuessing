@@ -1,3 +1,11 @@
+// Bu React Native kodu, uygulamayı yazan kişi hakkında bilgi sağlar. 
+// Kod, yazara ait bilgileri (ad, okul, öğrenim durumu vb.) içeren bir 
+// metin ve yazara ait sosyal medya profillerine (Instagram, LinkedIn, 
+//   Github) erişebilmek için butonlar içermektedir. Kod ayrıca, 
+//   uygulamayı kullanıcıya beğendiyse ve yazara geri dönüş yapmak 
+//   istiyorsa, e-posta gönderebilme özelliğini de içermektedir. Bu 
+//   özellik sadece telefonun e-posta uygulaması yüklüyse çalışacaktır.
+
 import React, { useState, useEffect } from "react";
 import {
   Text,
