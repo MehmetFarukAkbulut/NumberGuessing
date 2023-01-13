@@ -1,6 +1,15 @@
 --npx expo install
 
---npx expo start
+
+Projeyi çalıştırmak için projeyi açtıktan sonra teminale «--npx expo start» yazıyoruz. Karşımıza 
+
+QR code ve çeşitli çalıştırma seçenekleri çıkıyor.
+
+Projeyi telefonda çalıştırmak için telefonumuza Expo Go uygulamasını kurmalıyız. 
+
+Bu program sayesinde çıkan QR kodu okutup projemizde yaptığımız değişiklikleri telefon 
+
+üzerinden kolay bir şekilde görebiliriz.
 
 #Ben Kimim?
 
