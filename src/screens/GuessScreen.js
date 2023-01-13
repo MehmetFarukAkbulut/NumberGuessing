@@ -69,11 +69,14 @@ const GuessScreen = () => {
 
       return;
     }
-
+    if (101> guess > 0) {
     if (guess > correctNumber) {
       setResult("Daha Küçük ");
     } else {
       setResult("Daha Büyük ");
+    }}
+    else {
+      setResult("Yanlış Değer Girdiniz ");
     }
     setNumGuesses(numGuesses + 1);
     setGuesses([...guesses, guess]);
