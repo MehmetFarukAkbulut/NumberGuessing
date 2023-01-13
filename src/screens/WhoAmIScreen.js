@@ -7,6 +7,7 @@
 //   özellik sadece telefonun e-posta uygulaması yüklüyse çalışacaktır.
 
 import React, { useState, useEffect } from "react";
+import {styles} from '../../Style';
 import {
   Text,
   StyleSheet,
@@ -62,9 +63,9 @@ const WhoAmIScreen = () => {
     Linking.openURL("https://github.com/MehmetFarukAkbulut");
   };
   return (
-    <View style={styles.container}>
+    <View style={styles.container2}>
       <LinearGradient
-        style={styles.containerLinear}
+        style={styles.containerLinear1}
         colors={["#58508d", "#003f5c"]}
         start={{ x: 0, y: 0 }}
         end={{ x: 0, y: 1 }}
@@ -74,26 +75,26 @@ const WhoAmIScreen = () => {
         </ScrollView>
         <TouchableOpacity
           onPress={instagram}
-          style={[styles.buttonstyle, { backgroundColor: "#F77737" }]}
+          style={[styles.buttonstyle2, { backgroundColor: "#F77737" }]}
         >
           <Text style={{ textAlign: "center", color: "#fff" }}>INSTAGRAM</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={linkedin}
-          style={[styles.buttonstyle, { backgroundColor: "#0072b1" }]}
+          style={[styles.buttonstyle2, { backgroundColor: "#0072b1" }]}
         >
           <Text style={{ textAlign: "center", color: "#fff" }}>LINKEDIN</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={github}
-          style={[styles.buttonstyle, { backgroundColor: "#171515" }]}
+          style={[styles.buttonstyle2, { backgroundColor: "#171515" }]}
         >
           <Text style={{ textAlign: "center", color: "#fff" }}>GITHUB</Text>
         </TouchableOpacity>
         {isAvailable ? (
           <TouchableOpacity
             onPress={sendMail}
-            style={[styles.buttonstyle, { backgroundColor: "#bc5090" }]}
+            style={[styles.buttonstyle2, { backgroundColor: "#bc5090" }]}
           >
             <Text style={{ textAlign: "center", color: "#fff" }}>
               SEND MAIL
@@ -106,72 +107,5 @@ const WhoAmIScreen = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  buttonView1: {
-    flex: 1,
-    alignSelf: "stretch",
-    justifyContent: "flex-end",
-    marginLeft: 10,
-    marginRight: 10,
-  },
-  container: {
-    flex: 1,
-    alignContent: "center",
-    justifyContent: "center",
-    backgroundColor: "#fff0f5",
-  },
-  containerLinear: {
-    flex: 1,
-    backgroundColor: "#4530b3",
-    alignContent: "center",
-    justifyContent: "center",
-  },
-  buttonstyle: {
-    alignSelf: "stretch",
-    borderRadius: 5,
-    paddingVertical: 10,
-    paddingHorizontal: 15,
-    marginLeft: 10,
-    marginRight: 10,
-    marginBottom: 10,
-  },
-  text1: {
-    color: "#1561ad",
-    fontSize: 25,
-    fontWeight: "bold",
-    marginTop: 25,
-    textAlign: "center",
-  },
-  text2: {
-    fontSize: 15,
-    fontWeight: "100",
-    marginLeft: 15,
-    marginRight: 15,
-    textAlign: "center",
-  },
-  text3: { fontSize: 20, fontWeight: "bold", textAlign: "center" },
-  text4: {
-    fontSize: 20,
-    fontWeight: "bold",
-    textAlign: "center",
-    marginTop: 25,
-  },
-  text5: {
-    color: "#1561ad",
-    fontSize: 20,
-    fontWeight: "bold",
-    textAlign: "center",
-    marginTop: 5,
-  },
-  text6: {
-    color: "#fff",
-    fontSize: 20,
-    fontWeight: "200",
-    textAlign: "center",
-    marginTop: 15,
-    marginLeft: 15,
-  },
-});
 
 export default WhoAmIScreen;

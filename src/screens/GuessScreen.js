@@ -11,12 +11,11 @@
 // kullanarak oyun ekranının arka planı için bir gradient oluşturur.
 
 import React, { useState } from "react";
+import {styles} from '../../Style';
 import {
   View,
   Text,
-  StyleSheet,
   TextInput,
-  Button,
   TouchableOpacity,
   Linking,
 } from "react-native";
@@ -33,6 +32,7 @@ const GuessScreen = () => {
   const [bestScore, setBestScore] = useState(0);
   const [playerName, setPlayerName] = useState("");
   const [records, setRecords] = useState([]);
+  const [displayAllGuesses, setDisplayAllGuesses] = useState(false);
 
   const onChangePlayerName = (text) => setPlayerName(text);
 
@@ -46,7 +46,7 @@ const GuessScreen = () => {
     setNumGuesses(0);
     setResult("");
     setGuesses([]);
-    //setBestScore(0);
+    setDisplayAllGuesses(false);
   };
 
   const onChangeText = (text) => setGuess(text);
@@ -78,6 +78,9 @@ const GuessScreen = () => {
     setNumGuesses(numGuesses + 1);
     setGuesses([...guesses, guess]);
   };
+  const toggleGuesses = () => {
+    setDisplayAllGuesses(!displayAllGuesses);
+  };
   const luckyPress = () => {
     Linking.openURL("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
   };
@@ -87,9 +90,9 @@ const GuessScreen = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container1}>
       <LinearGradient
-        style={styles.containerLinear}
+        style={styles.containerLinear1}
         colors={["#58508d", "#003f5c"]}
         start={{ x: 0, y: 0 }}
         end={{ x: 0, y: 1 }}
@@ -102,9 +105,10 @@ const GuessScreen = () => {
           </Text>
           <Text style={styles.text3}>Best score: {bestScore}</Text>
           <Text style={styles.text5}>Sayıyı Tahmin Edin</Text>
-          <View style={[styles.buttonstyle]}>
+          <View style={[styles.buttonstyle1]}>
           <TextInput
             style={styles.input}
+            keyboardType="numeric"
             placeholder="Tahmininizi Girin: "
             onChangeText={onChangeText}
             value={guess}
@@ -112,7 +116,7 @@ const GuessScreen = () => {
           </View>
           <TouchableOpacity
             onPress={onSubmit}
-            style={[styles.buttonstyle, { backgroundColor: "#ff6361" }]}
+            style={[styles.buttonstyle1, { backgroundColor: "#ff6361" }]}
           >
             <Text style={{ color: "#fff" }}>TAHMİN ET</Text>
           </TouchableOpacity>
@@ -132,7 +136,7 @@ const GuessScreen = () => {
           {bestScore === 1 && (
             <TouchableOpacity
               onPress={luckyPress}
-              style={[styles.buttonstyle, { backgroundColor: "#bc5090" }]}
+              style={[styles.buttonstyle1, { backgroundColor: "#bc5090" }]}
             >
               <Text style={{ color: "#fff" }}>TEK TAHMİN ÖDÜLÜ</Text>
             </TouchableOpacity>
@@ -140,25 +144,35 @@ const GuessScreen = () => {
           {numGuesses >= 10 && (
             <TouchableOpacity
               onPress={deadPress}
-              style={[styles.buttonstyle, { backgroundColor: "#000" }]}
+              style={[styles.buttonstyle1, { backgroundColor: "#000" }]}
             >
               <Text style={{ color: "#fff" }}>GEÇMİŞ OLSUN</Text>
             </TouchableOpacity>
           )}
-          <ScrollView>
-            {guesses.map((guess, index) => (
-              <Text style={styles.text2} key={index}>
-                Tahmin {index + 1}: {guess}
-              </Text>
-            ))}
-          </ScrollView>
+          <TouchableOpacity onPress={toggleGuesses}>
+          <Text style={[styles.text2, { color: "#ffa600" }]}>
+            {displayAllGuesses ? "Tahminleri gizle" : "Tahminleri göster "}
+          </Text>
+        </TouchableOpacity>
+        <ScrollView>
+          {displayAllGuesses ? (
+            <View>
+              {guesses.map((guess, index) => (
+                <Text key={index} style={styles.text2}>
+                   Tahmin {index + 1}: {guess}
+                </Text>
+              ))}</View>
+              ) : (
+                <Text style={styles.text2}>Son Tahmin: {guesses[guesses.length - 1]}</Text>
+              )}
+            </ScrollView>
           <TouchableOpacity
             onPress={resetGame}
-            style={[styles.buttonstyle, { backgroundColor: "#ffa600" }]}
+            style={[styles.buttonstyle1, { backgroundColor: "#ffa600" }]}
           >
             <Text style={{ color: "#fff" }}>BAŞTAN BAŞLA</Text>
           </TouchableOpacity>
-          <View style={[styles.buttonstyle]}>
+          <View style={[styles.buttonstyle1]}>
           <TextInput
             style={styles.input}
             placeholder="Player Name"
@@ -168,7 +182,7 @@ const GuessScreen = () => {
           </View>
           <TouchableOpacity
             onPress={submitRecord}
-            style={[styles.buttonstyle, { backgroundColor: "#bc5090" }]}
+            style={[styles.buttonstyle1, { backgroundColor: "#bc5090" }]}
           >
             <Text style={{ color: "#fff" }}>SKORUNU KAYDET</Text>
           </TouchableOpacity>
@@ -185,76 +199,6 @@ const GuessScreen = () => {
     </View>
   );
 };
-const styles = StyleSheet.create({
-  input: {
-    width: 300,
-    height: 40,
-    textAlign: "center",
-    backgroundColor: "#fff",
-    paddingVertical: 10,
-    paddingHorizontal: 15,
-    borderColor: "#ccc",
-    borderWidth: 1,
-    borderRadius: 5,
-    fontSize: 16,
-    marginLeft: 0,
-    marginRight: 0,
-  },
-  buttonstyle: {
-    alignItems: "center",
-    borderRadius: 5,
-    paddingVertical: 10,
-    paddingHorizontal: 15,
-    marginLeft: 10,
-    marginRight: 10,
-    marginBottom: 10,
-  },
-  container: {
-    flex: 1,
-    alignContent: "stretch",
-    justifyContent: "flex-start",
-    backgroundColor: "#D1D9D7",
-  },
-  containerLinear: {
-    flex: 1,
-    backgroundColor: "#4530b3",
-    alignContent: "center",
-    justifyContent: "center",
-  },
-  text1: {
-    color: "#ffa600",
-    fontSize: 25,
-    fontWeight: "bold",
-    marginTop: 25,
-    textAlign: "center",
-  },
-  text2: {
-    color: "#fff",
-    fontSize: 15,
-    fontWeight: "100",
-    marginLeft: 15,
-    marginRight: 15,
-    textAlign: "center",
-  },
-  text3: {
-    color: "#ffa600",
-    fontSize: 20,
-    fontWeight: "bold",
-    textAlign: "center",
-  },
-  text4: {
-    fontSize: 20,
-    fontWeight: "bold",
-    textAlign: "center",
-    marginTop: 25,
-  },
-  text5: {
-    color: "#fff",
-    fontSize: 20,
-    fontWeight: "bold",
-    textAlign: "center",
-    marginTop: 5,
-  },
-});
+
 
 export default GuessScreen;

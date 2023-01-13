@@ -10,8 +10,9 @@
 //  kullanarak butonları ve alert diyalogları oluşturur.
 
 import React, { useState, useEffect } from "react";
-import {Text,StyleSheet,View,TouchableOpacity,BackHandler, Alert} from "react-native";
+import {Text,View,TouchableOpacity,BackHandler, Alert} from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
+import {styles} from '../../Style';
 
 const HomeScreen = ({ navigation }) => {
   const backPressed = () => {
@@ -26,9 +27,9 @@ const HomeScreen = ({ navigation }) => {
     );
     return true;
   }
-  return (<View style={styles.container}>
+  return (<View style={styles.container3}>
     <LinearGradient
-      style={styles.containerLinear}
+      style={styles.containerLinear1}
       colors={["#58508d", "#003f5c"]}
       start={{ x:0 , y:0 }}
       end={{ x: 0, y:1}}
@@ -39,25 +40,25 @@ const HomeScreen = ({ navigation }) => {
         <View style={styles.buttonView1}>
           <TouchableOpacity
             onPress={() => navigation.navigate("Guess")}
-            style={[styles.buttonstyle, { backgroundColor: "#ff6361" }]}
+            style={[styles.buttonstyle3, { backgroundColor: "#ff6361" }]}
           >
             <Text style={{ color: "#fff" }}>OYUNA BAŞLA</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => navigation.navigate("HowTo")}
-            style={[styles.buttonstyle, { backgroundColor: "#ffa600" }]}
+            style={[styles.buttonstyle3, { backgroundColor: "#ffa600" }]}
           >
             <Text style={{ color: "#fff" }}>NASIL OYNANIR</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => navigation.navigate("WhoAmI")}
-            style={[styles.buttonstyle, { backgroundColor: "#bc5090" }]}
+            style={[styles.buttonstyle3, { backgroundColor: "#bc5090" }]}
           >
             <Text style={{ color: "#fff" }}>HAKKIMDA</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => backPressed()}
-            style={[styles.buttonstyle, { backgroundColor: "#000"}]}
+            style={[styles.buttonstyle3, { backgroundColor: "#000"}]}
           >
             <Text style={{ color: "#fff" }}>ÇIKIŞ</Text>
           </TouchableOpacity>
@@ -66,59 +67,5 @@ const HomeScreen = ({ navigation }) => {
     </LinearGradient></View>
   );
 };
-const styles = StyleSheet.create({
-  input: {
-    width: 300,
-    height: 40,
-    backgroundColor: "#fff",
-    paddingVertical: 10,
-    paddingHorizontal: 15,
-    borderColor: "#ccc",
-    borderWidth: 1,
-    borderRadius: 15,
-    fontSize: 16,
-    textAlign: "center",
-  },
-  buttonstyle: {
-    alignItems: "center",
-    borderRadius: 5,
-    paddingVertical: 10,
-    paddingHorizontal: 15,
-    marginBottom: 10,
-  },
-  buttonView1: {
-    flex: 1,
-    alignSelf: "stretch",
-    marginTop: 10,
-    marginLeft: 10,
-    marginRight: 10,
-  },
-  container: {
-    flex: 1,
-    alignItems: "stretch",
-    justifyContent: "flex-start",
-  },
-  containerLinear: {
-    flex: 1,
-    backgroundColor: "#4530b3",
-    alignContent: "center",
-    justifyContent: "center",
-  },
-  text1: {
-    color: "#fff",
-    fontSize: 25,
-    fontWeight: "bold",
-    marginTop: 25,
-    textAlign: "center",
-  },
-  text2: {
-    fontSize: 15,
-    fontWeight: "100",
-    marginLeft: 15,
-    marginRight: 15,
-    textAlign: "center",
-  },
-  text3: { fontSize: 20, fontWeight: "bold", textAlign: "center" },
-});
 
 export default HomeScreen;
