@@ -20,7 +20,9 @@ Benim adım Mehmet Faruk Akbulut. Trakya Üniversitesinde, Bilgisayar Mühendisl
 almışsınızdır. Uygulamanın kodlarını Github hesabımdan bulabilirsiniz. Bana 
 
 uygulamadaki hesaplarımdan ulaşabilirsiniz. Geri dönüşlerinizi bekliyorum...
-
+<p align="center">
+ <img src="/src/images/mainpage.jpg" alt="Bu kod, HomeScreen adında bir React Native bileşeni oluşturur ve uygulamanın anasayfası olarak render edilir. Bileşen, useEffect kanca kullanarak cihazın geri düğmesine dinleyen bir olay dinleyicisi ekler ve geri düğmeye basıldığında kullanıcıya uygulamadan çıkmak istediğini soran bir uyarı oluşturur. Ayrıca, 'navigation' prop'unu kullanır, böylece düğmeler basıldığında diğer ekranlara geçiş yapar. Bileşen ayrıca expo-linear-gradient kütüphanesinden LinearGradient bileşenini kullanarak anasayfanın arka planı için bir gradient oluşturur. Bileşen ayrıca 'TouchableOpacity' ve 'Alert' bileşenleri kullanarak butonları ve alert diyalogları oluşturur."width="250">
+</p>
 
 ![localhost_19006_](https://user-images.githubusercontent.com/78991543/212136291-efd08d5a-a530-4540-9168-d52b76a3eef7.jpg)
 
@@ -92,3 +94,20 @@ e-posta gönderebilme özelliğini de içermektedir. Bu özellik sadece telefonu
 
 uygulaması yüklüyse çalışacaktır.
 
+
+## Install and Use
+In order to install, clone this repository and run:
+```javascript
+npm install
+// OR
+yarn install
+```
+
+This was made with [Expo](https://expo.io/), so you need it to run. To do it, run:
+```javascript
+expo start
+// OR if you have it locally
+npx expo start
+```
+
+This starts the *Metro Bundler*. You can simulate the app in an Android emulator (such as in [Android Studio](https://developer.android.com/studio)) or in your own device, Android or iOS powered, by downloading the [Expo App](https://expo.io/tools#client).
