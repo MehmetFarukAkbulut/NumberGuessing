@@ -20,9 +20,6 @@ Benim adım Mehmet Faruk Akbulut. Trakya Üniversitesinde, Bilgisayar Mühendisl
 almışsınızdır. Uygulamanın kodlarını Github hesabımdan bulabilirsiniz. Bana 
 
 uygulamadaki hesaplarımdan ulaşabilirsiniz. Geri dönüşlerinizi bekliyorum...
-<p align="center">
- <img src="/src/images/mainpage.jpg" alt="Bu kod, HomeScreen adında bir React Native bileşeni oluşturur ve uygulamanın anasayfası olarak render edilir. Bileşen, useEffect kanca kullanarak cihazın geri düğmesine dinleyen bir olay dinleyicisi ekler ve geri düğmeye basıldığında kullanıcıya uygulamadan çıkmak istediğini soran bir uyarı oluşturur. Ayrıca, 'navigation' prop'unu kullanır, böylece düğmeler basıldığında diğer ekranlara geçiş yapar. Bileşen ayrıca expo-linear-gradient kütüphanesinden LinearGradient bileşenini kullanarak anasayfanın arka planı için bir gradient oluşturur. Bileşen ayrıca 'TouchableOpacity' ve 'Alert' bileşenleri kullanarak butonları ve alert diyalogları oluşturur."width="250">
-</p>
 
 ![localhost_19006_](https://user-images.githubusercontent.com/78991543/212136291-efd08d5a-a530-4540-9168-d52b76a3eef7.jpg)
 
