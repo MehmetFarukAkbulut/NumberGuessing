@@ -62,7 +62,7 @@ const GuessScreen = () => {
         setBestScore(numGuesses + 1);
       }
       setResult(
-        "Tebrikler,doğru tahmin ettiniz!" +
+        "Tebrikler,doğru tahmin ettiniz! " +
           (numGuesses + 1) +
           ". defada sayıyı bildiniz!"
       );
@@ -195,7 +195,7 @@ const GuessScreen = () => {
             (record, index) =>
               record.bestScore > 0 && (
                 <Text style={styles.text2} key={index}>
-                  Player {record.playerName}: {record.bestScore} defada bildi
+                  Player {record.playerName}: {record.bestScore} defada bildi.
                 </Text>
               )
           )}
